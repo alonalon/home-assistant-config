@@ -1,0 +1,34 @@
+##
+## Lights
+##
+
+light:
+  - platform: mqtt
+    name: "Tv lamp"
+    command_topic: "cmnd/sonoff/power"
+    state_topic: "stat/sonoff/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Bedroom drawer lamp"
+    command_topic: "cmnd/sonoff4/power"
+    state_topic: "stat/sonoff4/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+  - platform: mqtt
+    name: "Tv lamp"
+    command_topic: "cmnd/sonoff/power"
+    state_topic: "stat/sonoff/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+group:
+  Lights:
+    - light.tv_lamp
+    - light.bedroom_drawer_lamp

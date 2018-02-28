@@ -1,0 +1,8 @@
+##
+## Camera
+##
+
+#camera:
+#  - platform: ffmpeg
+#    input: -rtsp_transport tcp -i rtsp://192.168.124.189/unicast
+#    name: Overwatch Cam

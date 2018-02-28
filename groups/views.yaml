@@ -1,0 +1,20 @@
+Default View:
+  view: yes
+  icon: mdi:earth
+  entities:
+    - group.living_room
+    - group.bedroom
+    - group.lights
+
+Living Room View:
+  view: yes
+  icon: mdi:home-outline
+  entities:
+    - group.living_room
+    - group.living_room_sensors
+
+Bedroom View:
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - group.bedroom

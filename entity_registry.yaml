@@ -1,0 +1,33 @@
+media_player.chromecast:
+  platform: cast
+  unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
+media_player.google_home_bedroom:
+  platform: cast
+  unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
+binary_sensor.fibaro_system_motion_sensor_sensor:
+  platform: zwave
+  unique_id: 2-72057594076463104
+sensor.fibaro_system_motion_sensor_temperature:
+  platform: zwave
+  unique_id: 2-72057594076479506
+sensor.fibaro_system_motion_sensor_luminance:
+  platform: zwave
+  unique_id: 2-72057594076479538
+sensor.fibaro_system_motion_sensor_seismic_intensity:
+  platform: zwave
+  unique_id: 2-72057594076479890
+sensor.fibaro_system_motion_sensor_alarm_type:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.fibaro_system_motion_sensor_alarm_level:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.fibaro_system_motion_sensor_sourcenodeid:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.fibaro_system_motion_sensor_burglar:
+  platform: zwave
+  unique_id: 2-72057594077528225
+sensor.fibaro_system_motion_sensor_general:
+  platform: zwave
+  unique_id: 2-72057594078232577

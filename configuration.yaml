@@ -1,0 +1,41 @@
+homeassistant:
+  name: ahomie
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 143
+  unit_system: metric
+  time_zone: Europe/Stockholm
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+
+frontend:
+  themes: !include_dir_merge_named themes/
+
+# Enables configuration UI
+cloud:
+config:
+discovery:
+conversation:
+history:
+logbook:
+map:
+sun:
+updater:
+
+http:
+  base_url: !secret http_base_url
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  api_password: !secret http_password
+
+# Text to speech
+tts:
+  - platform: google
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+group: !include_dir_merge_named groups/
+zone: !include_dir_list zones/
+#light: !include_dir_list lights/
+#sensor: !include_dir_list sensors/

@@ -1,0 +1,7 @@
+##
+## Sony Bravia TV
+##
+
+media_player:
+  - platform: braviatv
+    host: !secret bravia_tv

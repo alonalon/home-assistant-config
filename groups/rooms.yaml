@@ -1,0 +1,11 @@
+Living Room:
+  - sensor.fibaro_system_motion_sensor_temperature
+  - sensor.fibaro_system_motion_sensor_luminance
+  - sensor.living_room_motion
+  - light.tv_lamp
+  - media_player.chromecast
+  - media_player.sony_bravia_tv
+
+Bedroom: 
+  - light.tv_lamp
+  - media_player.google_home_bedroom

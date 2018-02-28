@@ -36,5 +36,3 @@ zwave:
 
 group: !include_dir_merge_named groups/
 zone: !include_dir_list zones/
-#light: !include_dir_list lights/
-#sensor: !include_dir_list sensors/

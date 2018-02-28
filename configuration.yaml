@@ -5,7 +5,6 @@ homeassistant:
   elevation: 143
   unit_system: metric
   time_zone: Europe/Stockholm
-  customize: !include customize.yaml
   packages: !include_dir_named packages
 
 frontend:

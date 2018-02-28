@@ -1,0 +1,26 @@
+##
+## Workday
+##
+
+homeassistant:
+  customize:
+    binary_sensor.workday:
+      friendly_name: Workday
+      icon: mdi:briefcase
+    binary_sensor.workday_tomorrow:
+      friendly_name: Workday Tomorrow
+      icon: mdi:briefcase-upload
+
+binary_sensor:
+  - platform: workday
+    name: workday
+    country: SE
+  - platform: workday
+    name: workday_tomorrow
+    country: SE
+    days_offset: 1
+
+group:
+  Workday:
+    - binary_sensor.workday
+    - binary_sensor.workday_tomorrow

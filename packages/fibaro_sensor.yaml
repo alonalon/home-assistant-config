@@ -9,6 +9,8 @@ homeassistant:
       icon: mdi:lightbulb-outline
     sensor.fibaro_system_motion_sensor_temperature:
       friendly_name: Living Room temperature
+    sensor.living_room_motion:
+      icon: mdi:run
 
 group:
   living_room_sensors:

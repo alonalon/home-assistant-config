@@ -19,16 +19,38 @@ light:
     payload_on: "ON"
     payload_off: "OFF"
     retain: true
-  - platform: mqtt
-    name: "Tv lamp"
-    command_topic: "cmnd/sonoff/power"
-    state_topic: "stat/sonoff/POWER"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
+  - platform: mqtt_json
+    name: "Desk Strip"
+    state_topic: "alon/desk"
+    command_topic: "alon/desk/set"
+    effect: true
+    effect_list:
+      - bpm
+      - candy cane
+      - confetti
+      - cyclon rainbow
+      - dots
+      - fire
+      - glitter
+      - juggle
+      - lightning
+      - noise
+      - police all
+      - police one
+      - rainbow
+      - rainbow with glitter
+      - ripple
+      - sinelon
+      - solid
+      - twinkle
+    brightness: true
+    flash: true
+    rgb: true
+    optimistic: false
+    qos: 0
 
 group:
   Lights:
     - light.tv_lamp
     - light.bedroom_drawer_lamp
+    - light.desk_strip

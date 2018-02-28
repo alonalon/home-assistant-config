@@ -1,0 +1,33 @@
+##
+## Weather
+##
+
+homeassistant:
+  customize:
+    sensor.weather_temperature:
+      friendly_name: Temperature
+    sensor.weather_symbol:
+      friendly_name: Weather
+    sensor.weather_precipitation:
+      friendly_name: Precipitation
+      icon: mdi:weather-rainy
+    sensor.weather_wind_speed:
+      friendly_name: Wind speed
+      icon: mdi:weather-windy
+
+sensor:
+  - platform: yr
+    name: Weather
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+
+group:
+  Weather:
+    - sensor.weather_symbol
+    - sensor.weather_temperature
+    - sensor.weather_precipitation
+    - sensor.weather_wind_speed
+    - sun.sun

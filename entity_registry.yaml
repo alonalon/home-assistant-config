@@ -31,3 +31,6 @@ sensor.fibaro_system_motion_sensor_burglar:
 sensor.fibaro_system_motion_sensor_general:
   platform: zwave
   unique_id: 2-72057594078232577
+media_player.plex_web_safari:
+  platform: plex
+  unique_id: nsnokxficlo80nh8fpg7tqr7

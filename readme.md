@@ -1,5 +1,5 @@
-# ahomie
-> Home Assistant Configuration
+# Home Assistant Configuration
+> My Home Assistant Configuration
 
 
 ### Setups

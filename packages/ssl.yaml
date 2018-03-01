@@ -1,6 +1,7 @@
 ##
 ## ssl cert expiry date
 ## secret: ssl-cert-check -b -c /etc/letsencrypt/live/yoururl.duckdns.org/cert.pem | awk '{ print $NF }'
+## apt-get install ssl-cert-check
 ##
 
 homeassistant:

@@ -26,7 +26,6 @@ sensor:
 
 group:
   Weather:
-    - sensor.weather_symbol
     - sensor.weather_temperature
     - sensor.weather_precipitation
     - sensor.weather_wind_speed

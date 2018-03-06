@@ -1,0 +1,76 @@
+group:
+
+  ##
+  ## Views
+  ##
+
+  Default View:
+    view: yes
+    icon: mdi:earth
+    entities:
+      - group.aron
+      - group.ssl_sensor
+      - group.weather
+      - group.living_room
+      - group.bedroom
+      - group.lights
+
+  Living Room View:
+    view: yes
+    icon: mdi:home-outline
+    entities:
+      - group.living_room
+
+  Bedroom View:
+    view: yes
+    icon: mdi:hotel
+    entities:
+      - group.bedroom
+
+  Admin View:
+    view: yes
+    icon: mdi:lock-outline
+    entities:
+      - group.fibaro_motion_sensor
+
+  ##
+  ## Rooms
+  ##
+
+  Living Room:
+    - sensor.fibaro_system_motion_sensor_temperature
+    - sensor.fibaro_system_motion_sensor_luminance
+    - sensor.living_room_motion
+    - light.tv_lamp
+    - light.desk_strip
+    - media_player.chromecast
+    - media_player.plex_web_safari
+    - media_player.sony_bravia_tv
+
+  Bedroom:
+    - light.bedroom_drawer_lamp
+    - media_player.google_home_bedroom
+
+  ##
+  ## People
+  ##
+
+  People:
+    - group.aron
+
+  Aron:
+    - device_tracker.iphone_aron
+    - sensor.aron_iphone_battery
+    - sensor.aron_iphone_wifi
+
+  ##
+  ## Sensors
+  ##
+
+  Fibaro Motion Sensor:
+    - sensor.fibaro_system_motion_sensor_temperature
+    - sensor.fibaro_system_motion_sensor_luminance
+    - sensor.fibaro_system_motion_sensor_burglar
+    - sensor.fibaro_system_motion_sensor_alarm_level
+    - sensor.fibaro_system_motion_sensor_alarm_type
+    - sensor.fibaro_system_motion_sensor_seismic_intensity

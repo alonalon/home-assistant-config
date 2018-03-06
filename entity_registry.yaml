@@ -34,3 +34,9 @@ sensor.fibaro_system_motion_sensor_general:
 media_player.plex_web_safari:
   platform: plex
   unique_id: nsnokxficlo80nh8fpg7tqr7
+media_player.iphone:
+  platform: plex
+  unique_id: E77A6865-EA2D-4322-87D5-2205CFE5A0F3
+media_player.arons_ipad:
+  platform: plex
+  unique_id: 9D4C3833-6A41-403F-8D17-19C162E2E679

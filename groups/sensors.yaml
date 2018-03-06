@@ -1,7 +1,0 @@
-Fibaro Motion Sensor:
-  - sensor.fibaro_system_motion_sensor_temperature
-  - sensor.fibaro_system_motion_sensor_luminance
-  - sensor.fibaro_system_motion_sensor_burglar
-  - sensor.fibaro_system_motion_sensor_alarm_level
-  - sensor.fibaro_system_motion_sensor_alarm_type
-  - sensor.fibaro_system_motion_sensor_seismic_intensity

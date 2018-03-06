@@ -1,1 +1,9 @@
 
+iphone_aron:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iphone
+  picture:
+  track: true
+  vendor:

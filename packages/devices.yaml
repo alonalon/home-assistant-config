@@ -1,0 +1,41 @@
+##
+## Devices
+##
+
+homeassistant:
+  customize:
+    device_tracker.iphone_aron:
+      friendly_name: Aron
+      icon: mdi:human-male
+    sensor.aron_iphone_battery:
+      friendly_name: Battery
+      icon: mdi:battery
+    sensor.aron_iphone_wifi:
+      friendly_name: Wifi
+      icon: mdi:wifi
+
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 50
+
+sensor:
+
+  - platform: mqtt
+    state_topic: "owntracks/iphone/Aron"
+    name: "Aron iPhone Battery"
+    unit_of_measurement: "%"
+    value_template: "{{ value_json.batt }}"
+
+  - platform: mqtt
+    state_topic: "owntracks/iphone/Aron"
+    name: "Aron iPhone Wifi"
+    value_template: >
+      {% if value_json.conn == "w" %}
+        Connected
+      {% else %}
+        Not Connected
+      {% endif %}
+
+
+

@@ -40,3 +40,9 @@ media_player.iphone:
 media_player.arons_ipad:
   platform: plex
   unique_id: 9D4C3833-6A41-403F-8D17-19C162E2E679
+sensor.iphone_battery_state:
+  platform: ios
+  unique_id: state_iphone
+sensor.iphone_battery_level:
+  platform: ios
+  unique_id: level_iphone

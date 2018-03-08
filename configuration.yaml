@@ -20,6 +20,8 @@ logbook:
 map:
 sun:
 updater:
+ios:
+notify:
 
 http:
   base_url: !secret http_base_url

@@ -7,3 +7,12 @@ iphone_aron:
   picture:
   track: true
   vendor:
+
+iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iphone
+  picture:
+  track: true
+  vendor:

@@ -1,48 +1,76 @@
 media_player.chromecast:
+  name:
   platform: cast
   unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
 media_player.google_home_bedroom:
+  name:
   platform: cast
   unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
 binary_sensor.fibaro_system_motion_sensor_sensor:
+  name:
   platform: zwave
   unique_id: 2-72057594076463104
 sensor.fibaro_system_motion_sensor_temperature:
+  name:
   platform: zwave
   unique_id: 2-72057594076479506
 sensor.fibaro_system_motion_sensor_luminance:
+  name:
   platform: zwave
   unique_id: 2-72057594076479538
 sensor.fibaro_system_motion_sensor_seismic_intensity:
+  name:
   platform: zwave
   unique_id: 2-72057594076479890
 sensor.fibaro_system_motion_sensor_alarm_type:
+  name:
   platform: zwave
   unique_id: 2-72057594077528065
 sensor.fibaro_system_motion_sensor_alarm_level:
+  name:
   platform: zwave
   unique_id: 2-72057594077528081
 sensor.fibaro_system_motion_sensor_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 2-72057594077528097
 sensor.fibaro_system_motion_sensor_burglar:
+  name:
   platform: zwave
   unique_id: 2-72057594077528225
 sensor.fibaro_system_motion_sensor_general:
+  name:
   platform: zwave
   unique_id: 2-72057594078232577
 media_player.plex_web_safari:
+  name:
   platform: plex
   unique_id: nsnokxficlo80nh8fpg7tqr7
 media_player.iphone:
+  name:
   platform: plex
   unique_id: E77A6865-EA2D-4322-87D5-2205CFE5A0F3
 media_player.arons_ipad:
+  name:
   platform: plex
   unique_id: 9D4C3833-6A41-403F-8D17-19C162E2E679
 sensor.iphone_battery_state:
+  name:
   platform: ios
   unique_id: state_iphone
 sensor.iphone_battery_level:
+  name:
   platform: ios
   unique_id: level_iphone
+media_player.xboxone:
+  name:
+  platform: plex
+  unique_id: 462zavp85kdz6wj1322avuqu
+sensor.arons_ipad_battery_level:
+  name:
+  platform: ios
+  unique_id: level_arons_ipad
+sensor.arons_ipad_battery_state:
+  name:
+  platform: ios
+  unique_id: state_arons_ipad

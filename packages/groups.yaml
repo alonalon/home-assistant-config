@@ -59,9 +59,8 @@ group:
     - group.aron
 
   Aron:
-    - device_tracker.iphone_aron
-    - sensor.aron_iphone_battery
-    - sensor.aron_iphone_wifi
+    - device_tracker.iphone
+    - sensor.iphone_battery_level
 
   ##
   ## Sensors

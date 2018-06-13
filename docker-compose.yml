@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    network_mode: bridge
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./srv/portainer/data:/data
+    ports:
+      - 9000:9000
+
+  home-assistant:
+    image: homeassistant/home-assistant:0.69.1
+    container_name: home-assistant
+    restart: always
+    volumes:
+      - ./home-assistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - /dev/ttyACM0:/dev/zwave
+
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: mqtt
+    restart: unless-stopped
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    environment:
+      - PGID=0
+      - PUID=0
+    ports:
+      - 1883:1883
+      - 9001:9001
+
+  nginx:
+    image: nginx:1.13.11
+    container_name: nginx
+    restart: always
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/certificates:/etc/letsencrypt
+      - ./nginx/letsencrypt:/data/letsencrypt
+    ports:
+      - 80:80
+      - 443:443

@@ -11,7 +11,6 @@ frontend:
   themes: !include_dir_merge_named themes/
 
 # Enables configuration UI
-cloud:
 config:
 discovery:
 conversation:
@@ -25,13 +24,12 @@ notify:
 
 http:
   base_url: !secret http_base_url
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
   api_password: !secret http_password
+  use_x_forwarded_for: true
 
 # Text to speech
 tts:
   - platform: google
 
 zwave:
-  usb_path: /dev/ttyACM0
+  usb_path: /dev/zwave

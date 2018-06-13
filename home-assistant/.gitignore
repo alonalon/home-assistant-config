@@ -15,4 +15,4 @@ tts
 bravia.conf
 plex.conf
 sensors
-secrets.yaml
+srv/

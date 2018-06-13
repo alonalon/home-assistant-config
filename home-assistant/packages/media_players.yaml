@@ -1,0 +1,9 @@
+##
+## Media players
+##
+
+media_player:
+  - platform: cast
+    host: 192.168.124.184
+  - platform: cast
+    host: 192.168.124.144

@@ -1,0 +1,8 @@
+
+iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iphone
+  picture:
+  track: true

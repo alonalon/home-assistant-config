@@ -3,6 +3,8 @@
 ##
 
 #camera:
-#  - platform: ffmpeg
-#    input: -rtsp_transport tcp -i rtsp://192.168.124.189/unicast
-#    name: Overwatch Cam
+#  - platform: xiaomi
+#    name: Xiaomi Camera
+#    host: secret.camera_ip
+#    model: 'xiaofang'
+#    password: dummypassword

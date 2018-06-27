@@ -16,3 +16,6 @@ bravia.conf
 plex.conf
 sensors
 secrets.yaml
+deconz/config.ini
+deconz/session.default
+deconz/zcldb.txt

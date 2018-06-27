@@ -12,7 +12,6 @@ frontend:
 
 # Enables configuration UI
 config:
-discovery:
 conversation:
 history:
 logbook:
@@ -33,3 +32,7 @@ tts:
 
 zwave:
   usb_path: /dev/zwave
+
+deconz:
+  host: deconz
+  port: 8080

@@ -1,60 +1,85 @@
 zwave.aeotec_zw090_zstick_gen5_eu:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-1
 zwave.fibaro_system_motion_sensor:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-2
 binary_sensor.fibaro_system_motion_sensor_sensor:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076463104
 sensor.fibaro_system_motion_sensor_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076479506
 sensor.fibaro_system_motion_sensor_luminance:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076479538
 sensor.fibaro_system_motion_sensor_seismic_intensity:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076479890
 sensor.fibaro_system_motion_sensor_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528065
 sensor.fibaro_system_motion_sensor_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528081
 sensor.fibaro_system_motion_sensor_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528097
 sensor.fibaro_system_motion_sensor_burglar:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594077528225
 sensor.fibaro_system_motion_sensor_general:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594078232577
 media_player.chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
 sensor.iphone_battery_level:
+  config_entry_id:
   name:
   platform: ios
   unique_id: level_iphone
 sensor.iphone_battery_state:
+  config_entry_id:
   name:
   platform: ios
   unique_id: state_iphone
 media_player.google_home_bedroom:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
+sensor.daylight:
+  config_entry_id: 171230db739a4d82b6e864da38bde12a
+  name:
+  platform: deconz
+  unique_id: 00:21:2e:ff:ff:02:2c:21-01
+light.osramstrip:
+  config_entry_id: 64eb870aad4447ecb59f96ab98752f99
+  name:
+  platform: deconz
+  unique_id: 7c:b0:3e:aa:00:ab:49:54-03

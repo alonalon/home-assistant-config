@@ -4,5 +4,5 @@
 
 cast:
   media_player:
-    - host: 192.168.124.184
-    - host: 192.168.124.144
+  - host: !secret chromecast_ip
+  - host: !secret homemini_ip

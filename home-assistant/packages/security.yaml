@@ -10,6 +10,7 @@ homeassistant:
 automation:
   - id: notify_on_bad_logins
     alias: Send notification when a failed login attempt occur
+    initial_state: on
     trigger:
       - platform: state
         entity_id: persistent_notification.httplogin
@@ -24,3 +25,4 @@ automation:
       - service: persistent_notification.dismiss
         data:
           notification_id: httplogin
+

@@ -13,7 +13,7 @@ services:
       - 9000:9000
 
   home-assistant:
-    image: homeassistant/home-assistant:0.72.1
+    image: homeassistant/home-assistant:0.74.2
     container_name: home-assistant
     restart: always
     volumes:

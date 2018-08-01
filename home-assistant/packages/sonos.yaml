@@ -1,0 +1,8 @@
+#
+# Controls sonos speakers in the home
+#
+
+sonos:
+  media_player:
+    hosts:
+      - !secret sonos_living_room

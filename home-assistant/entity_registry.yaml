@@ -53,11 +53,6 @@ sensor.fibaro_system_motion_sensor_general:
   name:
   platform: zwave
   unique_id: 2-72057594078232577
-media_player.chromecast:
-  config_entry_id:
-  name:
-  platform: cast
-  unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
 sensor.iphone_battery_level:
   config_entry_id:
   name:
@@ -68,11 +63,6 @@ sensor.iphone_battery_state:
   name:
   platform: ios
   unique_id: state_iphone
-media_player.google_home_bedroom:
-  config_entry_id:
-  name:
-  platform: cast
-  unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
 sensor.daylight:
   config_entry_id: 171230db739a4d82b6e864da38bde12a
   name:
@@ -83,3 +73,18 @@ light.osramstrip:
   name:
   platform: deconz
   unique_id: 7c:b0:3e:aa:00:ab:49:54-03
+media_player.google_home_bedroom:
+  config_entry_id:
+  name:
+  platform: cast
+  unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
+media_player.chromecast:
+  config_entry_id:
+  name:
+  platform: cast
+  unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
+media_player.living_room:
+  config_entry_id: fd138e1e94434c34a0ae9dd5ecd93f8d
+  name: Sonos Living Room
+  platform: sonos
+  unique_id: RINCON_7828CA0CE83C01400

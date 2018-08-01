@@ -47,6 +47,7 @@ group:
     - media_player.chromecast
     - media_player.plex_web_safari
     - media_player.sony_bravia_tv
+    - media_player.living_room 
 
   Bedroom:
     - light.bedroom_drawer_lamp

@@ -2,9 +2,10 @@
 ## Camera
 ##
 
-#camera:
-#  - platform: xiaomi
-#    name: Xiaomi Camera
-#    host: secret.camera_ip
-#    model: 'xiaofang'
-#    password: dummypassword
+camera:
+  - platform: xiaomi
+    name: Xiaomi Camera
+    host: !secret camera_ip
+    model: 'xiaofang'
+    password: !secret camera_password
+    path: '/media/mmcblk0p1/record'

@@ -1,3 +1,38 @@
+light.osramstrip:
+  config_entry_id: 82541408ef1f4cfc9f62cacd917c96fe
+  name:
+  platform: deconz
+  unique_id: 7c:b0:3e:aa:00:ab:49:54-03
+sensor.daylight:
+  config_entry_id: 82541408ef1f4cfc9f62cacd917c96fe
+  name:
+  platform: deconz
+  unique_id: 00:21:2e:ff:ff:02:2c:21-01
+sensor.iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_iphone
+sensor.iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_iphone
+media_player.google_home_bedroom:
+  config_entry_id: f31220abf1fc43ce82a33bc2e4e4ed3d
+  name:
+  platform: cast
+  unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
+media_player.chromecast:
+  config_entry_id: f31220abf1fc43ce82a33bc2e4e4ed3d
+  name:
+  platform: cast
+  unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
+media_player.living_room:
+  config_entry_id: fd138e1e94434c34a0ae9dd5ecd93f8d
+  name:
+  platform: sonos
+  unique_id: RINCON_7828CA0CE83C01400
 zwave.aeotec_zw090_zstick_gen5_eu:
   config_entry_id:
   name:
@@ -7,84 +42,49 @@ zwave.fibaro_system_motion_sensor:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: node-2
+  unique_id: node-4
 binary_sensor.fibaro_system_motion_sensor_sensor:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594076463104
+  unique_id: 4-72057594110017536
 sensor.fibaro_system_motion_sensor_temperature:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594076479506
+  unique_id: 4-72057594110033938
 sensor.fibaro_system_motion_sensor_luminance:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594076479538
+  unique_id: 4-72057594110033970
 sensor.fibaro_system_motion_sensor_seismic_intensity:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594076479890
+  unique_id: 4-72057594110034322
 sensor.fibaro_system_motion_sensor_alarm_type:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594077528065
+  unique_id: 4-72057594111082497
 sensor.fibaro_system_motion_sensor_alarm_level:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594077528081
+  unique_id: 4-72057594111082513
 sensor.fibaro_system_motion_sensor_sourcenodeid:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594077528097
+  unique_id: 4-72057594111082529
 sensor.fibaro_system_motion_sensor_burglar:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594077528225
+  unique_id: 4-72057594111082657
 sensor.fibaro_system_motion_sensor_general:
   config_entry_id:
   name:
   platform: zwave
-  unique_id: 2-72057594078232577
-sensor.iphone_battery_level:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: level_iphone
-sensor.iphone_battery_state:
-  config_entry_id:
-  name:
-  platform: ios
-  unique_id: state_iphone
-sensor.daylight:
-  config_entry_id: 171230db739a4d82b6e864da38bde12a
-  name:
-  platform: deconz
-  unique_id: 00:21:2e:ff:ff:02:2c:21-01
-light.osramstrip:
-  config_entry_id: 64eb870aad4447ecb59f96ab98752f99
-  name:
-  platform: deconz
-  unique_id: 7c:b0:3e:aa:00:ab:49:54-03
-media_player.google_home_bedroom:
-  config_entry_id:
-  name:
-  platform: cast
-  unique_id: 313bde04-9b7a-5c58-1216-e5a0687fbc13
-media_player.chromecast:
-  config_entry_id:
-  name:
-  platform: cast
-  unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
-media_player.living_room:
-  config_entry_id: fd138e1e94434c34a0ae9dd5ecd93f8d
-  name: Sonos Living Room
-  platform: sonos
-  unique_id: RINCON_7828CA0CE83C01400
+  unique_id: 4-72057594111787009

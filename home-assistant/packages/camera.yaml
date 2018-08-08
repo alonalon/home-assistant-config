@@ -3,9 +3,6 @@
 ##
 
 camera:
-  - platform: xiaomi
+  - platform: ffmpeg
     name: Xiaomi Camera
-    host: !secret camera_ip
-    model: 'xiaofang'
-    password: !secret camera_password
-    path: '/media/mmcblk0p1/record'
+    input: !secret camera_ip

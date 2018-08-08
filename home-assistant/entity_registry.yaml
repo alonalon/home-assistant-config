@@ -30,7 +30,7 @@ media_player.chromecast:
   unique_id: 4f43d7ea-d85b-4d50-4d9c-3ed42c04446c
 media_player.living_room:
   config_entry_id: fd138e1e94434c34a0ae9dd5ecd93f8d
-  name:
+  name: Sonos Living Room
   platform: sonos
   unique_id: RINCON_7828CA0CE83C01400
 zwave.aeotec_zw090_zstick_gen5_eu:

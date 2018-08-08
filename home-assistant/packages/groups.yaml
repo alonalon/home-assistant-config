@@ -82,3 +82,4 @@ group:
     - sensor.memory_use_percent
     - sensor.since_last_boot_templated
     - sensor.since_last_boot
+    - sensor.ssl_certificate_expiry

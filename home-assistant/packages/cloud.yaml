@@ -3,3 +3,10 @@
 ##
 
 cloud:
+  alexa:
+    entity_config:
+      sensor.fibaro_system_motion_sensor_temperature:
+        name: Livingroom temperature
+        description: Temperature in livingroom
+        display_categories: SENSOR
+    

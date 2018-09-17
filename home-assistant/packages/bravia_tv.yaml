@@ -3,7 +3,5 @@
 ##
 
 media_player:
-  - platform: braviatv_psk
+  - platform: braviatv
     host: !secret bravia_tv
-    mac: !secret bravia_mac
-    psk: !secret bravia_psk

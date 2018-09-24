@@ -62,6 +62,7 @@ group:
 
   Aron:
     - device_tracker.iphone
+    - device_tracker.tile_iphone
     - sensor.iphone_battery_level
 
   ##

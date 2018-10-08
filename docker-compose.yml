@@ -60,3 +60,12 @@ services:
     ports:
       - 80:80
       - 443:443
+
+  appdaemon:
+    image: acockburn/appdaemon:latest
+    container_name: appdaemon
+    restart: always
+    volumes:
+      - ./appdaemon:/conf/
+    ports:
+      - 5050:5050

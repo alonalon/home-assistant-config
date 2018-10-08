@@ -1,0 +1,11 @@
+secrets: /conf/secrets.yaml
+appdaemon:
+  logfile: STDOUT
+  errorfile: STDERR
+  threads: 10
+  app_dir: /conf/apps
+  plugins:
+    HASS:
+      type: hass
+      ha_url: !secret ha_url
+      ha_key: !secret ha_key

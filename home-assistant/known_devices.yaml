@@ -14,3 +14,11 @@ tile_iphone:
   name: tile iphone
   picture:
   track: true
+
+tile_keys:
+  hide_if_away: false
+  icon: mdi:bluetooth
+  mac:
+  name: tile keys
+  picture:
+  track: true

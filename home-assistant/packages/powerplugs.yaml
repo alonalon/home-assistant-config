@@ -1,0 +1,19 @@
+##
+## Smart Plugs
+##
+
+homeassistant:
+  customize:
+    switch.osram_plug_1:
+      friendly_name: Plug 1
+      icon: mdi:power-plug
+    switch.osram_plug_2:
+      friendly_name: Plug 2
+      icon: mdi:power-plug
+
+group:
+  power_plugs:
+    name:  Power plugs
+    entities:
+      - switch.osram_plug_1
+      - switch.osram_plug_2

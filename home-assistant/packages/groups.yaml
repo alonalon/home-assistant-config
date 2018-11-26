@@ -14,6 +14,7 @@ group:
       - group.living_room
       - group.bedroom
       - group.lights
+      - group.power_plugs
 
   Living Room View:
     view: yes
@@ -47,12 +48,19 @@ group:
     - media_player.chromecast
     - media_player.plex_web_safari
     - media_player.sony_bravia_tv
-    - media_player.living_room 
+    - media_player.living_room
 
   Bedroom:
     - light.bedroom_drawer_lamp
     - media_player.google_home_bedroom
 
+  ##
+  ## Powerplugs
+  ##
+
+  Powerplugs:
+    - switch.osram_plug_1
+    - switch.osram_plug_2
   ##
   ## People
   ##

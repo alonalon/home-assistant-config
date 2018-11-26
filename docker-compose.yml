@@ -38,7 +38,7 @@ services:
       - 9001:9001
 
   deconz:
-    image: marthoc/deconz:amd64-2.05.44
+    image: marthoc/deconz:amd64-2.05.47
     container_name: deconz
     restart: unless-stopped
     volumes:

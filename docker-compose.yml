@@ -1,31 +1,119 @@
-version: '3'
+version: '3.7'
+
+networks:
+   traefik-net:
+     driver: bridge
 
 services:
+  traefik:
+    image: traefik
+    container_name: traefik
+    restart: always
+    ports:
+       - target: 80
+         published: 80
+         mode: host
+       - target: 443
+         published: 443
+         mode: host
+    networks:
+      - traefik-net
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
+      - /opt/traefik/acme.json:/acme.json
+    labels:
+      traefik.enable: "true"
+      traefik.port: 8080
+      traefik.frontend.rule: "Host:${DOMAIN_TRAEFIK}"
+      traefik.frontend.entryPoints: "https"
+      traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
+    command:
+      - "--entryPoints=Name:http Address::80"
+      - "--entryPoints=Name:https Address::443 TLS"
+      - "--defaultentrypoints=http,https"
+      - "--api"
+      - "--api.entryPoint=traefik"
+      - "--api.dashboard=true"
+      - "--docker"
+      - "--docker.watch"
+      - "--docker.exposedByDefault=false"
+      - "--docker.endpoint=unix:///var/run/docker.sock"
+      - "--docker.network=home_traefik-net"
+      - "--acme"
+      - "--acme.storage=acme.json"
+      - "--acme.entryPoint=https"
+      - "--acme.httpChallenge.entryPoint=http"
+      - "--acme.onHostRule=true"
+      - "--acme.onDemand=false"
+      - "--acme.email=aronhafner@gmail.com"
+      - "--traefikLog.format=json"
+      - "--logLevel=INFO"
+
   portainer:
     image: portainer/portainer
     container_name: portainer
-    network_mode: bridge
     restart: always
+    ports:
+      - 9000:9000
+    networks:
+      - traefik-net
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./srv/portainer/data:/data
-    ports:
-      - 9000:9000
+    labels:
+      traefik.enable: "true"
+      traefik.port: 9000
+      traefik.frontend.rule: "Host:${DOMAIN_PORTAINER}"
+      traefik.frontend.entryPoints: "https"
+      traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   home-assistant:
     image: homeassistant/home-assistant:0.83.3
     container_name: home-assistant
     restart: always
+    networks:
+      - traefik-net
     volumes:
       - ./home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
     devices:
       - /dev/ttyACM0:/dev/zwave
+    labels:
+      traefik.enable: "true"
+      traefik.port: 8123
+      traefik.frontend.rule: "Host:${DOMAIN_HOMEASSISTANT}"
+      traefik.frontend.entryPoints: "https"
+
+  deconz:
+    image: marthoc/deconz:amd64-2.05.47
+    container_name: deconz
+    restart: unless-stopped
+    networks:
+      - traefik-net
+    volumes:
+      - ./deconz:/root/.local/share/dresden-elektronik/deCONZ
+    devices:
+      - /dev/ttyUSB0
+    environment:
+      - DECONZ_WEB_PORT=8080
+    labels:
+      traefik.enable: "true"
+      traefik.port: 8080
+      traefik.frontend.rule: "Host:${DOMAIN_DECONZ}"
+      traefik.frontend.entryPoints: "http"
+      traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   mqtt:
     image: eclipse-mosquitto
     container_name: mqtt
     restart: unless-stopped
+    ports:
+      - target: 1883
+        published: 1883
+        mode: host
+      - target: 9001
+        published: 9001
+        mode: host
     volumes:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
@@ -33,39 +121,12 @@ services:
     environment:
       - PGID=0
       - PUID=0
-    ports:
-      - 1883:1883
-      - 9001:9001
-
-  deconz:
-    image: marthoc/deconz:amd64-2.05.47
-    container_name: deconz
-    restart: unless-stopped
-    volumes:
-      - ./deconz:/root/.local/share/dresden-elektronik/deCONZ
-    devices:
-      - /dev/ttyUSB0
-    environment:
-      - DECONZ_WEB_PORT=8080
-      - DECONZ_WS_PORT=8443
-
-  nginx:
-    image: nginx:1.13.11
-    container_name: nginx
-    restart: always
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./nginx/certificates:/etc/letsencrypt
-      - ./nginx/letsencrypt:/data/letsencrypt
-    ports:
-      - 80:80
-      - 443:443
 
   appdaemon:
     image: acockburn/appdaemon:latest
     container_name: appdaemon
     restart: always
-    volumes:
-      - ./appdaemon:/conf/
     ports:
       - 5050:5050
+    volumes:
+      - ./appdaemon:/conf/

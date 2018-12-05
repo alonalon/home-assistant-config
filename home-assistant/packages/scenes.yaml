@@ -1,0 +1,24 @@
+##
+## Scenes
+##
+
+scene:
+  - name: tv_on
+    entities:
+      light.tv_lamp:
+        state: off
+      light.osramstrip:
+        state: on
+        transition: 20
+        color_temp: 367
+        brightness: 160
+      media_player.sony_bravia_tv: on
+  - name: tv_idle
+    entities:
+      light.tv_lamp:
+        state: on
+      light.osramstrip:
+        state: on
+        transition: 20
+        color_temp: 367
+        brightness: 100

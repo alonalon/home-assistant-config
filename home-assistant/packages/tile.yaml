@@ -2,6 +2,16 @@
 ## Tile Device Tracker
 ##
 
+homeassistant:
+  customize:
+    device_tracker.tile_04854e3fa0a2bf63:
+      friendly_name: Tile Keys
+      icon: mdi:key
+    device_tracker.tile_pada91a545d14b734b23c8fc0669e1e69:
+      friendly_name: Tile iPhone
+      icon: mdi:cellphone-key
+
+
 device_tracker:
   - platform: tile
     username: !secret tile_username

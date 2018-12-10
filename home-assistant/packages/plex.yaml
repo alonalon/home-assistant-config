@@ -1,6 +1,0 @@
-##
-## plex
-##
-
-media_player:
-  - platform: plex

@@ -17,3 +17,11 @@ device_tracker:
     username: !secret tile_username
     password: !secret tile_password
     show_inactive: true
+
+
+group:
+  tiles:
+    name:  Tiles
+    entities:
+      - device_tracker.tile_04854e3fa0a2bf63
+      - device_tracker.tile_pada91a545d14b734b23c8fc0669e1e69

@@ -15,6 +15,7 @@ group:
       - group.kitchen
       - group.lights
       - group.power_plugs
+      - group.media_players
 
   Living Room View:
     view: yes

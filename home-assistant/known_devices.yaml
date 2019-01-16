@@ -38,3 +38,11 @@ tile_pada91a545d14b734b23c8fc0669e1e69:
   name: tile pada91a545d14b734b23c8fc0669e1e69
   picture:
   track: true
+
+tile_p_ada91a545d14b734b23c8fc0669e1e69:
+  hide_if_away: false
+  icon: mdi:view-grid
+  mac:
+  name: tile p ada91a545d14b734b23c8fc0669e1e69
+  picture:
+  track: true

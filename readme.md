@@ -8,7 +8,7 @@ My config to for home-assistant.
 - [Docker](https://www.docker.com)
 - [Portainer](https://github.com/portainer/portainer)
 - [Mosquitto](https://github.com/eclipse/mosquitto)
-- [Nginx](https://github.com/nginx/nginx)
+- [Traefik](https://github.com/containous/traefik)
 
 
 ### Devices

@@ -1,8 +1,8 @@
 version: '3.7'
 
 networks:
-   traefik-net:
-     driver: bridge
+  traefik-net:
+    driver: bridge
 
 services:
   traefik:

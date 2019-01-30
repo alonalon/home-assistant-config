@@ -46,6 +46,12 @@ cards:
                 artwork_border: true
                 show_source: true
                 short_info: true
+              - entity: media_player.google_home_bedroom
+                type: custom:mini-media-player
+                icon: mdi:google-home
+                artwork_border: true
+                show_source: true
+                short_info: true
           - break
           - type: custom:layout-card
             layout: horizontal

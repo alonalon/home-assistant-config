@@ -8,12 +8,21 @@ cards:
       - type: custom:layout-card
         layout: vertical
         cards:
-          - type: entities
+          - type: glance
             title: Server
             show_header_toggle: false
             entities:
               - entity: sensor.ssl_certificate_expiry
-              - entity: sensor.last_boot
               - entity: sensor.processor_use
+              - entity: sensor.last_boot
               - entity: sensor.disk_use_percent_config
               - entity: sensor.memory_use_percent
+          - type: glance
+            title: Internet
+            show_header_toggle: false
+            entities:
+              - entity: sensor.speedtest_download
+              - entity: sensor.speedtest_upload
+              - entity: sensor.speedtest_ping
+
+

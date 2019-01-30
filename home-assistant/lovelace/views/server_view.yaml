@@ -1,0 +1,19 @@
+title: Server
+icon: mdi:server
+panel: true
+path: server
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:layout-card
+        layout: vertical
+        cards:
+          - type: entities
+            title: Server
+            show_header_toggle: false
+            entities:
+              - entity: sensor.ssl_certificate_expiry
+              - entity: sensor.last_boot
+              - entity: sensor.processor_use
+              - entity: sensor.disk_use_percent_config
+              - entity: sensor.memory_use_percent

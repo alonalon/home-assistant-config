@@ -9,6 +9,7 @@ homeassistant:
 
 frontend:
   themes: !include_dir_merge_named themes/
+  javascript_version: latest
 
 # Enables configuration UI
 config:
@@ -26,6 +27,9 @@ http:
   api_password: !secret http_password
   use_x_forwarded_for: true
   trusted_proxies: !secret http_ip_range
+
+lovelace:
+  mode: yaml
 
 # Text to speech
 tts:

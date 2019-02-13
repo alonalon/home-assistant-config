@@ -12,6 +12,31 @@ cards:
             entities:
               - entity: device_tracker.iphone
               - entity: device_tracker.tile_04854e3fa0a2bf63
+          - type: custom:layout-card
+            layout: horizontal
+            cards:
+            - type: horizontal-stack
+              title: Values
+              show_header_toggle: true
+              cards:
+                - type: custom:mini-graph-card
+                  entity: sensor.fibaro_system_motion_sensor_temperature
+                  name: Temperature
+                  line_color: '#44BBA4'
+                  line_width: 8
+                  hours_to_show: 168
+                - type: custom:mini-graph-card
+                  entity: sensor.fibaro_system_motion_sensor_luminance
+                  name: Lux
+                  line_color: '#44BBA4'
+                  line_width: 8
+                  hours_to_show: 168
+          - type: entities
+            title: Kitchen
+            show_header_toggle: false
+            entities:
+              - entity: binary_sensor.openclose_4
+              - entity: binary_sensor.openclose_5
           - break
           - type: entities
             title: Lights
@@ -52,35 +77,4 @@ cards:
                 artwork_border: true
                 show_source: true
                 short_info: true
-          - break
-          - type: custom:layout-card
-            layout: horizontal
-            cards:
-            - type: horizontal-stack
-              title: Values
-              show_header_toggle: true
-              cards:
-                - type: custom:mini-graph-card
-                  entity: sensor.fibaro_system_motion_sensor_temperature
-                  name: Temperature
-                  line_color: '#44BBA4'
-                  line_width: 8
-                  hours_to_show: 168
-                - type: custom:mini-graph-card
-                  entity: sensor.fibaro_system_motion_sensor_luminance
-                  name: Lux
-                  line_color: '#44BBA4'
-                  line_width: 8
-                  hours_to_show: 168
-                - type: custom:mini-graph-card
-                  entity: sensor.living_room_motion
-                  name: Motion
-                  line_color: '#44BBA4'
-                  line_width: 8
-          - type: entities
-            title: Kitchen
-            show_header_toggle: false
-            entities:
-              - entity: binary_sensor.openclose_4
-              - entity: binary_sensor.openclose_5
 

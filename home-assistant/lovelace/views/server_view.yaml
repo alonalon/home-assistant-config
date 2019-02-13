@@ -13,16 +13,49 @@ cards:
             show_header_toggle: false
             entities:
               - entity: sensor.ssl_certificate_expiry
-              - entity: sensor.processor_use
               - entity: sensor.last_boot
-              - entity: sensor.disk_use_percent_config
-              - entity: sensor.memory_use_percent
-          - type: glance
-            title: Internet
-            show_header_toggle: false
+          - type: custom:vertical-stack-in-card
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - type: custom:circle-sensor-card
+                    entity: sensor.processor_use
+                    name: CPU
+                    stroke_width: 6
+                    stroke_color: '#44BBA4'
+                    fill: '#E5F4F2'
+                    units: '%'
+                  - type: custom:circle-sensor-card
+                    entity: sensor.disk_use_percent_config
+                    name: Disk
+                    stroke_width: 6
+                    stroke_color: '#44BBA4'
+                    fill: '#E5F4F2'
+                    units: '%'
+                  - type: custom:circle-sensor-card
+                    entity: sensor.memory_use_percent
+                    name: Memory
+                    stroke_width: 6
+                    stroke_color: '#44BBA4'
+                    fill: '#E5F4F2'
+                    units: '%'
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Download
+                line_color: '#44BBA4'
+                line_width: 8
+                entities:
+                  - sensor.speedtest_download
+              - type: custom:mini-graph-card
+                name: Upload
+                line_color: '#44BBA4'
+                line_width: 8
+                entities:
+                  - sensor.speedtest_upload
+          - type: custom:mini-graph-card
+            name: Ping
+            line_color: '#44BBA4'
+            line_width: 8
             entities:
-              - entity: sensor.speedtest_download
-              - entity: sensor.speedtest_upload
-              - entity: sensor.speedtest_ping
-
-
+                - sensor.speedtest_ping

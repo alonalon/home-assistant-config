@@ -68,7 +68,7 @@ services:
       traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   home-assistant:
-    image: homeassistant/home-assistant:0.86.3
+    image: homeassistant/home-assistant:0.86.4
     container_name: home-assistant
     restart: always
     networks:
@@ -85,17 +85,21 @@ services:
       traefik.frontend.entryPoints: "https"
 
   deconz:
-    image: marthoc/deconz:amd64-2.05.55
+    image: marthoc/deconz:amd64-2.05.58
     container_name: deconz
     restart: unless-stopped
     networks:
       - traefik-net
+    ports:
+      - 5900:5900
     volumes:
       - ./deconz:/root/.local/share/dresden-elektronik/deCONZ
     devices:
       - /dev/ttyUSB0
     environment:
       - DECONZ_WEB_PORT=8080
+      - DECONZ_VNC_MODE=1
+      - DECONZ_VNC_PORT=5900
     labels:
       traefik.enable: "true"
       traefik.port: 8080

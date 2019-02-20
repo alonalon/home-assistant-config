@@ -20,3 +20,4 @@ deconz/config.ini
 deconz/session.default
 deconz/zcldb.txt
 .env
+srv

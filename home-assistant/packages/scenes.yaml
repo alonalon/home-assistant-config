@@ -6,7 +6,7 @@ scene:
   - name: tv_on
     entities:
       light.tv_lamp:
-        state: off
+        state: on
       light.osramstrip:
         state: on
         transition: 20
@@ -15,8 +15,6 @@ scene:
       media_player.sony_bravia_tv: on
   - name: tv_idle
     entities:
-      light.tv_lamp:
-        state: on
       light.osramstrip:
         state: on
         transition: 20

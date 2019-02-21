@@ -7,7 +7,7 @@ from typing import Callable
 import datetime
 
 import appdaemon.plugins.hass.hassapi as hass
-from globals import GlobalEvents, HouseModes
+from globals import GlobalEvents
 
 class Base(hass.Hass):
     """Define a base automation object."""

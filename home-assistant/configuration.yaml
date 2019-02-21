@@ -21,6 +21,7 @@ sun:
 updater:
 ios:
 notify:
+system_health:
 
 http:
   base_url: !secret http_base_url

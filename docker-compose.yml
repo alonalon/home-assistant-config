@@ -68,7 +68,7 @@ services:
       traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   home-assistant:
-    image: homeassistant/home-assistant:0.86.4
+    image: homeassistant/home-assistant:0.87.1
     container_name: home-assistant
     restart: always
     networks:
@@ -111,13 +111,11 @@ services:
     image: eclipse-mosquitto
     container_name: mqtt
     restart: unless-stopped
+    networks:
+      - traefik-net
     ports:
-      - target: 1883
-        published: 1883
-        mode: host
-      - target: 9001
-        published: 9001
-        mode: host
+      - 1883:1883
+      - 9001:9001
     volumes:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
@@ -125,12 +123,18 @@ services:
     environment:
       - PGID=0
       - PUID=0
+    labels:
+      traefik.enable: "false"
 
   appdaemon:
     image: acockburn/appdaemon:latest
     container_name: appdaemon
     restart: always
+    networks:
+      - traefik-net
     ports:
       - 5050:5050
     volumes:
       - ./appdaemon:/conf/
+    labels:
+      traefik.enable: "false"

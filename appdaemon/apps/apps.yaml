@@ -1,4 +1,1 @@
-hello_world:
-  module: hello
-  class: HelloWorld
-
+global_modules: globals

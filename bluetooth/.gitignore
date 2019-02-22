@@ -1,0 +1,7 @@
+mqtt_preferences
+owner_devices
+guest_devices
+behavior_preferences
+!templates/guest_devices
+!templates/mqtt_preferences
+!templates/owner_devices

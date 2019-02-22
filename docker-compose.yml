@@ -138,3 +138,12 @@ services:
       - ./appdaemon:/conf/
     labels:
       traefik.enable: "false"
+
+  bluetooth:
+    build: ./bluetooth
+    image: alonalon/bluetooth
+    container_name: bluetooth
+    network_mode: host
+    restart: always
+    volumes:
+      - ./bluetooth:/app 

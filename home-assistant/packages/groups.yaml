@@ -72,12 +72,13 @@ group:
     - media_player.google_home_bedroom
 
   ##
-  ## Powerplugs
+  ## Switches
   ##
 
-  Powerplugs:
+  Switches:
     - switch.osram_plug_1
     - switch.osram_plug_2
+
   ##
   ## People
   ##
@@ -86,9 +87,9 @@ group:
     - group.aron
 
   Aron:
+    - sensor.aron_iphone_bt
     - device_tracker.iphone
     - group.tiles
-    - sensor.iphone_battery_level
 
   ##
   ## Sensors

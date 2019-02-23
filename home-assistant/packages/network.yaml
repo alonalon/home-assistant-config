@@ -9,7 +9,7 @@ homeassistant:
 
 sensor:
   - platform: dnsip
-    host: myip.opendns.com
+    hostname: myip.opendns.com
 
 automation:
   - alias: notify_when_external_address_changes

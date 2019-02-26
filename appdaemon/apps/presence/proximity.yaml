@@ -1,0 +1,11 @@
+app_home_from_work:
+  module: proximity
+  class: ProximityManager
+  dir_of_travel: 'towards'
+  distance: 11
+  message: 'är på väg hem. Tiden beräknas till cirka 15 minuter.'
+  tts_device: 'media_player.living_room'
+  people_to_track:
+    - 'Aron'
+  dependencies:
+    - tts_manager

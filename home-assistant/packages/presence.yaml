@@ -1,0 +1,33 @@
+##
+## Devices for presence
+##
+
+homeassistant:
+  customize:
+    device_tracker.iphone:
+      friendly_name: Aron
+      icon: mdi:human-male
+    sensor.iphone_battery_level:
+      friendly_name: Battery
+      icon: mdi:battery
+
+# Presence
+sensor:
+  - platform: mqtt
+    name: aron_iphone_bt
+    state_topic: 'monitor/home/owner/room/18:65:90:2F:CC:E4'
+    value_template: >
+     {% if float(value_json.confidence) > 0 %}
+      home
+     {% else %}
+      not_home
+     {% endif %}
+    json_attributes_topic: 'monitor/home/owner/room/18:65:90:2F:CC:E4'
+
+# Aproximity
+proximity:
+  home_aron:
+    zone: home
+    devices:
+      - device_tracker.iphone
+    tolerance: 50

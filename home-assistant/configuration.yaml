@@ -32,7 +32,12 @@ http:
 lovelace:
   mode: yaml
 
-# Text to speech
+person:
+  - name: Aron
+    id: arontracker
+    device_trackers:
+      - device_tracker.presence_aron
+
 tts:
   - platform: google
 

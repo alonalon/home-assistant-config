@@ -10,8 +10,7 @@ cards:
         cards:
           - type: glance
             entities:
-              - entity: device_tracker.iphone
-              - entity: device_tracker.tile_04854e3fa0a2bf63
+              - entity: person.aron
           - type: custom:layout-card
             layout: horizontal
             cards:

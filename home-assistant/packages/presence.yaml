@@ -15,14 +15,14 @@ homeassistant:
 sensor:
   - platform: mqtt
     name: aron_iphone_bt
-    state_topic: 'monitor/home/owner/room/18:65:90:2F:CC:E4'
+    state_topic: 'monitor/home/owner/apartment/18:65:90:2F:CC:E4'
     value_template: >
      {% if float(value_json.confidence) > 0 %}
       home
      {% else %}
       not_home
      {% endif %}
-    json_attributes_topic: 'monitor/home/owner/room/18:65:90:2F:CC:E4'
+    json_attributes_topic: 'monitor/home/owner/apartment/18:65:90:2F:CC:E4'
 
 # Aproximity
 proximity:

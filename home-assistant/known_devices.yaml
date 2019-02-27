@@ -1,28 +1,4 @@
 
-iphone:
-  hide_if_away: false
-  icon:
-  mac:
-  name: iphone
-  picture:
-  track: true
-
-tile_iphone:
-  hide_if_away: false
-  icon: mdi:bluetooth
-  mac:
-  name: tile iphone
-  picture:
-  track: true
-
-tile_keys:
-  hide_if_away: false
-  icon: mdi:bluetooth
-  mac:
-  name: tile keys
-  picture:
-  track: true
-
 tile_04854e3fa0a2bf63:
   hide_if_away: false
   icon: mdi:view-grid
@@ -31,18 +7,18 @@ tile_04854e3fa0a2bf63:
   picture:
   track: true
 
-tile_pada91a545d14b734b23c8fc0669e1e69:
-  hide_if_away: false
-  icon: mdi:view-grid
-  mac:
-  name: tile pada91a545d14b734b23c8fc0669e1e69
-  picture:
-  track: true
-
 tile_p_ada91a545d14b734b23c8fc0669e1e69:
   hide_if_away: false
   icon: mdi:view-grid
   mac:
   name: tile p ada91a545d14b734b23c8fc0669e1e69
+  picture:
+  track: true
+
+iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: iPhone
   picture:
   track: true

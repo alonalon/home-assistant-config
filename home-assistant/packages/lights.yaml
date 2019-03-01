@@ -31,6 +31,7 @@ group:
     - light.tv_lamp
     - light.bedroom_drawer_lamp
     - light.osramstrip
+    - light.office_lamp
 
 
 automation:
@@ -43,7 +44,7 @@ automation:
         below: '50'
     condition:
       - condition: state
-        entity_id: device_tracker.iphone
+        entity_id: person.aron
         state: home
       - condition: time
         after: '15:00:00'

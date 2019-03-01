@@ -43,6 +43,7 @@ cards:
             entities:
               - entity: light.tv_lamp
               - entity: light.osramstrip
+              - entity: light.office_lamp
               - entity: light.bedroom_drawer_lamp
           - type: entities
             title: Switches

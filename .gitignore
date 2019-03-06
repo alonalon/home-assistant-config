@@ -21,3 +21,4 @@ deconz/session.default
 deconz/zcldb.txt
 .env
 srv
+.vscode

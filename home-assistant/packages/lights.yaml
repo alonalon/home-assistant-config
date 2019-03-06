@@ -55,4 +55,3 @@ automation:
           - light.tv_lamp
           - light.bedroom_drawer_lamp
           - light.osramstrip
-

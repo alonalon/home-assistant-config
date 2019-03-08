@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/alonalon/home.svg?style=svg)](https://circleci.com/gh/alonalon/home)
+
 ## Home configuration
 > A bunch of tools to automate my home
 

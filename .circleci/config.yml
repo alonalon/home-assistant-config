@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: homeassistant/amd64-homeassistant
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Check config
+          command: |
+            mv ./home-assistant/secrets-ci.yaml home-assistant/secrets.yaml
+            hass -c home-assistant/ --script check_config --info all

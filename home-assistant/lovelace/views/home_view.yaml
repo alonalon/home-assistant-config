@@ -36,6 +36,10 @@ cards:
             entities:
               - entity: binary_sensor.openclose_4
               - entity: binary_sensor.openclose_5
+          - type: glance
+            title: Vacuum
+            entities:
+              - vacuum.xiaomi_vacuum_cleaner
           - break
           - type: entities
             title: Lights

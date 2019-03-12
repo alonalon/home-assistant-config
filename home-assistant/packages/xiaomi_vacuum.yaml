@@ -1,0 +1,8 @@
+##
+## Xiaomi Roborock vacuum
+##
+
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_ip
+    token: !secret xiaomi_vacuum_token

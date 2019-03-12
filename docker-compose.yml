@@ -68,7 +68,7 @@ services:
       traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   home-assistant:
-    image: homeassistant/home-assistant:0.88.0
+    image: homeassistant/home-assistant:0.89.1
     container_name: home-assistant
     restart: always
     networks:
@@ -85,7 +85,7 @@ services:
       traefik.frontend.entryPoints: "https"
 
   deconz:
-    image: marthoc/deconz:amd64-2.05.58
+    image: marthoc/deconz:amd64-2.05.59
     container_name: deconz
     restart: unless-stopped
     networks:

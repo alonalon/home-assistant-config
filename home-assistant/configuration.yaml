@@ -25,7 +25,6 @@ system_health:
 
 http:
   base_url: !secret http_base_url
-  api_password: !secret http_password
   use_x_forwarded_for: true
   trusted_proxies: !secret http_ip_range
 

@@ -48,7 +48,11 @@ cards:
               - entity: light.tv_lamp
               - entity: light.osramstrip
               - entity: light.office_lamp
+              - entity: light.livingroom_ceiling
               - entity: light.bedroom_drawer_lamp
+              - entity: light.bedroom_ceiling
+              - entity: light.kitchen_table
+              - entity: light.entrance
           - type: entities
             title: Switches
             show_header_toggle: false

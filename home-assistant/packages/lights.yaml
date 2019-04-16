@@ -7,6 +7,8 @@ homeassistant:
   customize:
     automation.turn_on_lights_when_dark:
       hidden: false
+    sensor.daylight:
+      hidden: true
 
 light:
   - platform: mqtt

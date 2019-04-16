@@ -42,6 +42,7 @@ tts:
 
 zwave:
   usb_path: /dev/zwave
+  polling_interval: 30000
 
 deconz:
   host: deconz

@@ -9,10 +9,14 @@ homeassistant:
       hidden: false
     sensor.daylight:
       hidden: true
+    light.livingroom_floor:
+      friendly_name: Living room floor light
+    light.bedroom_drawer:
+      friendly_name: Bedroom drawer light
 
 light:
   - platform: mqtt
-    name: "Tv lamp"
+    name: "livingroom_floor"
     command_topic: "cmnd/sonoff/power"
     state_topic: "stat/sonoff/POWER"
     qos: 1
@@ -20,7 +24,7 @@ light:
     payload_off: "OFF"
     retain: true
   - platform: mqtt
-    name: "Bedroom drawer lamp"
+    name: "bedroom_drawer"
     command_topic: "cmnd/sonoff4/power"
     state_topic: "stat/sonoff4/POWER"
     qos: 1
@@ -28,18 +32,10 @@ light:
     payload_off: "OFF"
     retain: true
 
-group:
-  Lights:
-    - light.tv_lamp
-    - light.bedroom_drawer_lamp
-    - light.osramstrip
-    - light.office_lamp
-
-
 automation:
   - id: turn_on_lights
     alias: Turn on lights when dark
-    initial_state: on
+    initial_state: off
     trigger:
       - platform: numeric_state
         entity_id: sensor.fibaro_system_motion_sensor_luminance

@@ -1,5 +1,5 @@
 homeassistant:
-  name: ahomie
+  name: Home
   latitude: !secret latitude
   longitude: !secret longitude
   elevation: 143
@@ -38,11 +38,7 @@ person:
       - device_tracker.presence_aron
 
 tts:
-  - platform: google
-
-zwave:
-  usb_path: /dev/zwave
-  polling_interval: 30000
+  - platform: google_translate
 
 deconz:
   host: deconz

@@ -1,48 +1,4 @@
 group:
-
-  ##
-  ## Views
-  ##
-
-  Default View:
-    view: yes
-    icon: mdi:earth
-    entities:
-      - group.aron
-      - group.weather
-      - group.living_room
-      - group.bedroom
-      - group.kitchen
-      - group.lights
-      - group.power_plugs
-      - group.media_players
-
-  Living Room View:
-    view: yes
-    icon: mdi:home-outline
-    entities:
-      - group.living_room
-      - group.media_players
-
-  Bedroom View:
-    view: yes
-    icon: mdi:hotel
-    entities:
-      - group.bedroom
-
-  Kitchen View:
-    view: yes
-    icon: mdi:fridge-outline
-    entities:
-      - group.kitchen
-
-  Admin View:
-    view: yes
-    icon: mdi:lock-outline
-    entities:
-      - group.fibaro_motion_sensor
-      - group.server_sensor
-
   ##
   ## Rooms
   ##
@@ -51,13 +7,16 @@ group:
     - sensor.fibaro_system_motion_sensor_temperature
     - sensor.fibaro_system_motion_sensor_luminance
     - sensor.living_room_motion
-    - light.tv_lamp
-    - light.osramstrip
+    - light.tv
+    - light.livingroom_ceiling
+    - light.livingroom_floor
 
   Bedroom:
-    - light.bedroom_drawer_lamp
+    - light.bedroom_drawer
+    - light.bedroom_ceiling
 
   Kitchen:
+    - light.kitchen_table
     - binary_sensor.openclose_4
     - binary_sensor.openclose_5
 
@@ -74,17 +33,6 @@ group:
   ##
   ## Switches
   ##
-
-  Switches:
-    - switch.osram_plug_1
-    - switch.osram_plug_2
-
-  ##
-  ## People
-  ##
-
-  People:
-    - group.aron
 
   Aron:
     - sensor.aron_iphone_bt

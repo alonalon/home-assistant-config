@@ -6,10 +6,10 @@ homeassistant:
   customize:
     automation.doors_open:
       hidden: true
-    binary_sensor.openclose_4:
+    binary_sensor.refrigerator_door:
       friendly_name: Fridge door
       icon: mdi:fridge
-    binary_sensor.openclose_5:
+    binary_sensor.freezer_door:
       friendly_name: Freezer door
       icon: mdi:fridge
 
@@ -17,13 +17,13 @@ automation:
   - alias: doors_open
     trigger:
       - platform: state
-        entity_id: binary_sensor.openclose_4
+        entity_id: binary_sensor.refrigerator_door
         from: 'off'
         to: 'on'
         for:
           minutes: 2
       - platform: state
-        entity_id: binary_sensor.openclose_5
+        entity_id: binary_sensor.freezer_door
         from: 'off'
         to: 'on'
         for:

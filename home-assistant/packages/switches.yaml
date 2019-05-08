@@ -10,10 +10,3 @@ homeassistant:
     switch.osram_plug_2:
       friendly_name: Switch 2
       icon: mdi:power-plug
-
-group:
-  switches:
-    name:  Switches
-    entities:
-      - switch.osram_plug_1
-      - switch.osram_plug_2

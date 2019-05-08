@@ -34,8 +34,18 @@ cards:
             title: Kitchen
             show_header_toggle: false
             entities:
-              - entity: binary_sensor.openclose_4
-              - entity: binary_sensor.openclose_5
+              - entity: sensor.kitchen_temperature
+              - entity: sensor.kitchen_humidity
+              - entity: sensor.kitchen_pressure
+              - entity: binary_sensor.refrigerator_door
+              - entity: binary_sensor.freezer_door
+          - type: entities
+            title: Bedroom
+            show_header_toggle: false
+            entities:
+              - entity: sensor.bedroom_temperature
+              - entity: sensor.bedroom_humidity
+              - entity: sensor.bedroom_pressure
           - type: glance
             title: Vacuum
             entities:
@@ -45,20 +55,21 @@ cards:
             title: Lights
             show_header_toggle: false
             entities:
-              - entity: light.tv_lamp
-              - entity: light.osramstrip
-              - entity: light.office_lamp
+              - entity: light.livingroom_floor
+              - entity: light.tv
+              - entity: light.office
               - entity: light.livingroom_ceiling
-              - entity: light.bedroom_drawer_lamp
+              - entity: light.bedroom_drawer
               - entity: light.bedroom_ceiling
               - entity: light.kitchen_table
               - entity: light.entrance
+              - entity: light.closet
           - type: entities
             title: Switches
             show_header_toggle: false
             entities:
-              - entity: switch.osram_plug_1
-              - entity: switch.osram_plug_2
+              - entity: switch.switch_1
+              - entity: switch.switch_2
           - type: entities
             title: Entertainment
             show_header_toggle: false

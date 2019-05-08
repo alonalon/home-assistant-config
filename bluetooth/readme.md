@@ -2,8 +2,9 @@
 
 *Requirements*
 - A MQTT broker to connect to
-- Bluetooth enabled hardware
-- Bluetooth service disabled on host system
+- Bluetooth enabled hardware `$ systemctl stop bluetooth.service`
+- Bluetooth service disabled on host system `$ systemctl enable bluetooth.service`
+- Check that Bluetooth service is enabled but not running `$ systemctl status bluetooth.service`
 
 ## Installation
 

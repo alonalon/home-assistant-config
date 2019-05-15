@@ -61,6 +61,7 @@ cards:
               - entity: light.livingroom_ceiling
               - entity: light.bedroom_drawer
               - entity: light.bedroom_ceiling
+              - entity: group.kitchen_lights
               - entity: light.kitchen_table
               - entity: light.entrance
               - entity: light.closet

@@ -53,3 +53,11 @@ automation:
           - light.tv_lamp
           - light.bedroom_drawer_lamp
           - light.osramstrip
+
+group:
+  kitchen_lights:
+    name:  Kitchen Lights
+    entities:
+      - light.kitchen_1
+      - light.kitchen_2
+      - light.kitchen_3

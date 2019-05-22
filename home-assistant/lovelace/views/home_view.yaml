@@ -37,6 +37,7 @@ cards:
               - entity: sensor.kitchen_temperature
               - entity: sensor.kitchen_humidity
               - entity: sensor.kitchen_pressure
+              - entity: binary_sensor.water_leak
               - entity: binary_sensor.refrigerator_door
               - entity: binary_sensor.freezer_door
           - type: entities

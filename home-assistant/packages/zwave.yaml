@@ -1,0 +1,15 @@
+zwave:
+  usb_path: /dev/zwave
+  device_config:
+    light.livingroom_ceiling:
+      refresh_value: true
+      delay: 0
+    light.bedroom_ceiling:
+      refresh_value: true
+      delay: 0
+    light.entrance:
+      refresh_value: true
+      delay: 0
+    light.kitchen_table:
+      refresh_value: true
+      delay: 0

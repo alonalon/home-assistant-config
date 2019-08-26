@@ -68,7 +68,7 @@ services:
       traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   home-assistant:
-    image: homeassistant/home-assistant:0.96.1
+    image: homeassistant/home-assistant:0.97.2
     container_name: home-assistant
     restart: always
     networks:

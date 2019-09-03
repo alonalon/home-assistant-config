@@ -85,7 +85,7 @@ services:
       traefik.frontend.entryPoints: "https"
 
   deconz:
-    image: marthoc/deconz:amd64-2.05.66
+    image: marthoc/deconz:amd64-2.05.67
     container_name: deconz
     restart: unless-stopped
     networks:

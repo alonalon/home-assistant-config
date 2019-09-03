@@ -99,6 +99,7 @@ cards:
               - entity: binary_sensor.water_leak
               - entity: binary_sensor.refrigerator_door
               - entity: binary_sensor.freezer_door
+              - entity: binary_sensor.fire
           - type: entities
             title: Lights
             show_header_toggle: false

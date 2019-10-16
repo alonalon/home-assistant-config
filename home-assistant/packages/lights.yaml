@@ -32,6 +32,18 @@ light:
     payload_off: "OFF"
     retain: true
 
+entity_controller:
+  motion_closet:
+    sensor: binary_sensor.closet_presence
+    entity: light.closet
+    delay: 180
+  motion_hallway:
+    sensor:
+      - binary_sensor.entrance_presence
+      - binary_sensor.just_arrived
+    entity: light.entrance
+    delay: 180
+
 automation:
   - id: turn_on_lights
     alias: Turn on lights when dark

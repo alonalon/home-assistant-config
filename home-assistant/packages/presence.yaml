@@ -25,6 +25,13 @@ sensor:
      {% endif %}
     json_attributes_topic: !secret mqtt_presence_topic
 
+binary_sensor:
+  - platform: template
+    sensors:
+      just_arrived:
+        friendly_name: Just Arrived
+        value_template: "{{ is_state('person.aron', 'Just arrived') }}"
+
 # Aproximity
 proximity:
   home_aron:

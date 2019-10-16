@@ -1,0 +1,26 @@
+##
+## Smoke Sensor
+##
+
+homeassistant:
+  customize:
+    automation.smoke:
+      hidden: true
+    binary_sensor.smoke:
+      friendly_name: Smoke Sensor
+      icon: mdi:smoke-detector
+
+automation:
+  - alias: smoke
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.smoke
+        from: 'off'
+        to: 'on'
+        for:
+          seconds: 5
+    action:
+      service: notify.notify
+      data_template:
+        title: "{{ trigger.to_state.attributes.friendly_name }} is detecting Smoke"
+        message: "You might want to check that out."

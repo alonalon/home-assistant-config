@@ -68,7 +68,7 @@ services:
       traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
 
   home-assistant:
-    image: homeassistant/home-assistant:0.100.2
+    image: homeassistant/home-assistant:0.101.3
     container_name: home-assistant
     restart: always
     networks:
@@ -147,4 +147,4 @@ services:
     network_mode: host
     restart: always
     volumes:
-      - ./bluetooth:/app 
+      - ./bluetooth:/app

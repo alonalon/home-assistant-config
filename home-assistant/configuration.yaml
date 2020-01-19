@@ -22,6 +22,7 @@ updater:
 ios:
 notify:
 system_health:
+mobile_app:
 
 http:
   base_url: !secret http_base_url

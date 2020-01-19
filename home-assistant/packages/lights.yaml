@@ -32,17 +32,20 @@ light:
     payload_off: "OFF"
     retain: true
 
-entity_controller:
-  motion_closet:
-    sensor: binary_sensor.closet_presence
-    entity: light.closet
-    delay: 180
-  motion_hallway:
-    sensor:
-      - binary_sensor.entrance_presence
-      - binary_sensor.just_arrived
-    entity: light.entrance
-    delay: 180
+switch:
+  - platform: template
+    switches:
+      all_lights:
+        value_template: >
+          {% set domain = 'light' %}
+          {% set state = 'on' %}
+          {{ states[domain] | selectattr('state','eq', state) | list | count > 0 }}
+        turn_on:
+          service: shell_command.nop
+        turn_off:
+          service: light.turn_off
+          data:
+            entity_id: all
 
 automation:
   - id: turn_on_lights
@@ -73,3 +76,4 @@ group:
       - light.kitchen_1
       - light.kitchen_2
       - light.kitchen_3
+

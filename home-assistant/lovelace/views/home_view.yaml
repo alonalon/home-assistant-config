@@ -16,9 +16,15 @@ cards:
             title: Fast track
             show_header_toggle: false
             entities:
-            - entity: group.all_lights
+            - entity: switch.all_lights
               name: All Lights
               icon: mdi:lamp
+            - entity: input_boolean.guest_mode
+              name: Guests
+            - entity: input_boolean.cleaning_mode
+              name: Cleaning
+            - entity: input_boolean.vacation_mode
+              name: Vacation
         - type: glance
           title: Vacuum 🧹
           entities:

@@ -34,3 +34,38 @@ homeassistant:
       friendly_name: Kitchen Humidity
     sensor.kitchen_temperature_3:
       friendly_name: Kitchen Pressure
+    sensor.fibaro_system_motion_sensor_luminance:
+      friendly_name: Living Room luminance
+      icon: mdi:lightbulb-outline
+    sensor.fibaro_system_motion_sensor_temperature:
+      friendly_name: Living Room temperature
+    sensor.living_room_motion:
+      icon: mdi:run
+
+### Fibaro Motion Detector status
+sensor:
+  - platform: template
+    sensors:
+      living_room_motion:
+        friendly_name: "Motion"
+        value_template: >-
+          {% set state = states('sensor.fibaro_system_motion_sensor_burglar') %}
+          {% if state == '0' %}
+            Idle
+          {% elif state == '8' %}
+            Motion Detected
+          {% elif state == '3' %}
+            Tamper
+          {% elif state == '254' %}
+            Sleeping
+          {% else %}
+            {{ state|title }}
+          {% endif %}
+
+group:
+  living_room_sensors:
+    name:  Living Room Sensors
+    entities:
+      - sensor.fibaro_system_motion_sensor_temperature
+      - sensor.fibaro_system_motion_sensor_luminance
+      - sensor.living_room_motion

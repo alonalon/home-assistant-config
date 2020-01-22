@@ -1,0 +1,13 @@
+input_boolean:
+  guest_mode:
+    name: Guest Mode
+    icon: mdi:account-multiple-plus
+    initial: false
+  cleaning_mode:
+    name: Cleaning Mode
+    icon: mdi:spray-bottle
+    initial: false
+  vacation_mode:
+    name: Vacation Mode
+    icon: mdi:beach
+    initial: false

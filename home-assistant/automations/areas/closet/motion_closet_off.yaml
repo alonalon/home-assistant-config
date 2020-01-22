@@ -1,0 +1,17 @@
+---
+##
+## Automation for turn lights off when motion isn't detected for 30 sec
+## 30 secs are enough becuase the motion sensor have a timeout for a minute
+##
+
+alias: Turn off closet light
+trigger:
+  platform: state
+  entity_id: binary_sensor.closet_presence
+  to: 'off'
+  for:
+    seconds: 30
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.closet

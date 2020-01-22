@@ -1,0 +1,14 @@
+---
+##
+## Notify when external IP is changing
+##
+
+alias: notify_when_external_address_changes
+trigger:
+  platform: state
+  entity_id: sensor.myipopendnscom
+action:
+  service: notify.notify
+  data_template:
+    title: "External IP address changed"
+    message: "The external IP address changed to {{ states.sensor.myipopendnscom.state }}."

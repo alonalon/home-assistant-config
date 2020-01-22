@@ -1,0 +1,18 @@
+---
+##
+## Notify when smoke is detected
+##
+
+alias: smoke
+trigger:
+  - platform: state
+    entity_id: binary_sensor.smoke
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 10
+action:
+  service: notify.notify
+  data_template:
+    title: "Detecting Smoke"
+    message: "{{ trigger.to_state.attributes.friendly_name }} is Detecting smoke!"

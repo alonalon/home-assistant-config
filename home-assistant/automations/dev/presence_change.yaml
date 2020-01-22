@@ -1,0 +1,16 @@
+---
+##
+## Notify when presence changes
+##
+
+alias: Notify presence change
+initial_state: off
+trigger:
+  - platform: state
+    entity_id: person.aron
+action:
+  - service: notify.notify
+    data_template:
+      message: >
+        Aron just changed from {{ trigger.from_state.state }}
+        to {{ trigger.to_state.state }}

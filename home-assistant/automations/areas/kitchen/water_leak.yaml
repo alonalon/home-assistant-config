@@ -1,0 +1,18 @@
+---
+###
+### Notify if detect water in kitchen
+###
+
+alias: water_leak
+trigger:
+  - platform: state
+    entity_id: binary_sensor.water_leak
+    from: 'off'
+    to: 'on'
+    for:
+      seconds: 30
+action:
+  service: notify.notify
+  data_template:
+    title: "{{ trigger.to_state.attributes.friendly_name }} is detecting water"
+    message: "You might want to check that out."

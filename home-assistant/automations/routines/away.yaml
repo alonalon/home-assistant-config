@@ -1,0 +1,32 @@
+---
+##
+## Automation to tell me that someting is on when I'm away
+##
+
+alias: Send notification when a devices is turned on and everybody is away.
+trigger:
+  - platform: state
+    entity_id: group.all_lights
+    to: 'on'
+    from: 'off'
+  - platform: state
+    entity_id: media_player.sony_bravia_tv
+    to: 'on'
+    from: 'off'
+condition:
+  - condition: state
+    entity_id: device_tracker.iphone
+    state: not_home
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+action:
+  - service: notify.notify
+    data:
+      title: "Something is turned on"
+      message: "You might want to check that out."
+  - service: persistent_notification.dismiss
+    data:
+      notification_id: devices_is_on
+

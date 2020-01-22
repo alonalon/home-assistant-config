@@ -1,0 +1,25 @@
+---
+##
+## Automation to do certain things when arriving home
+##
+
+alias: Just arrived
+trigger:
+  - platform: state
+    entity_id: person.aron
+    to: 'Just arrived'
+    from: 'Away'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.fibaro_system_motion_sensor_luminance
+    below: 50
+action:
+  - service: light.turn_on
+    entity_id:
+      - light.kitchen_lights
+      - light.livingroom_floor
+      - light.bedroom_drawer
+      - light.tv
+      - light.office
+      - light.entrance
+

@@ -1,0 +1,90 @@
+---
+##
+## Alarm clock package
+##
+
+input_number:
+  alarm_hour:
+    name: Hours
+    icon: mdi:timer
+    initial: 07
+    min: 0
+    max: 23
+    step: 1
+  alarm_minutes:
+    name: Minutes
+    icon: mdi:timer
+    initial: 30
+    min: 00
+    max: 59
+    step: 1
+  alarm_offset:
+    name: Transition
+    icon: mdi:blur-linear
+    initial: 00
+    min: 0
+    max: 60
+    step: 5
+
+input_boolean:
+  alarm_enable:
+    name: "Enable Alarm"
+
+sensor:
+  - platform: time_date
+    display_options:
+      - 'time'
+  - platform: template
+    sensors:
+      alarm_time:
+        friendly_name: 'Alarm Time'
+        value_template: >-
+          {{ "%0.02d:%0.02d" | format(states("input_number.alarm_hour") | int, states("input_number.alarm_minutes") | int) }}
+  - platform: template
+    sensors:
+      alarm_time_minus_offset:
+        friendly_name: 'Offset Time'
+        value_template: >-
+          {{ '%0.02d:%0.02d' | format( ((((states('input_number.alarm_hour') | int)*60 + (states('input_number.alarm_minutes') | int) - (states('input_number.alarm_offset'))| int)/60)| int),(((((((((states('input_number.alarm_hour') | int)*60 + (states('input_number.alarm_minutes') | int) - (states('input_number.alarm_offset')) | int)/60)) - ((((states('input_number.alarm_hour') | int)*60 + (states('input_number.alarm_minutes') | int) - (states('input_number.alarm_offset')) | int)/60)| int))*100) | int)*60/100) | round) ) }}
+
+group:
+  alarm_clock:
+    name: Alarm Clock
+    entities:
+    - input_boolean.alarm_enable
+    - sensor.alarm_time
+    - sensor.alarm_time_minus_offset
+    - input_number.alarm_hour
+    - input_number.alarm_minutes
+    - input_number.alarm_offset
+
+automation:
+  - id: alarm_clock
+    alias: 'Alarm Clock'
+    trigger:
+      - platform: time_pattern
+        minutes: '/1'
+        seconds: 00
+    condition:
+      - condition: template
+        value_template: "{{ states.sensor.time.state == states.sensor.alarm_time_minus_offset.state  }}"
+      - condition: state
+        entity_id: input_boolean.alarm_enable
+        state: 'on'
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: state
+        entity_id: person.aron
+        state: 'Home'
+    action:
+      - service: script.radio
+      - service: light.turn_on
+        data:
+            entity_id: light.bedroom_drawer
+      - service: light.turn_on
+        data:
+            entity_id: light.bedroom_ceiling
+            transition: 60
+            brightness_pct: 70
+

@@ -1,3 +1,7 @@
+custom_header:
+  compact_mode: true
+  hide_config: true
+  hide_help: true
 title: Home
 resources: !include_dir_list lovelace/resources
 views:

@@ -72,9 +72,6 @@ automation:
         entity_id: input_boolean.alarm_enable
         state: 'on'
       - condition: state
-        entity_id: binary_sensor.workday_sensor
-        state: 'on'
-      - condition: state
         entity_id: person.aron
         state: 'Home'
     action:

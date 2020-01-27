@@ -48,5 +48,3 @@ deconz:
 hacs:
   token: !secret github_token
   appdaemon: true
-  python_script: true
-  theme: true

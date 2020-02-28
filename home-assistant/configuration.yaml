@@ -23,6 +23,8 @@ ios:
 notify:
 system_health:
 mobile_app:
+logger:
+  default: critical
 
 http:
   base_url: !secret http_base_url
@@ -41,9 +43,9 @@ person:
 tts:
   - platform: google_translate
 
-deconz:
-  host: deconz
-  port: 8080
+zha:
+  usb_path: /dev/zigbee
+  radio_type: deconz
 
 hacs:
   token: !secret github_token

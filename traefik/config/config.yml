@@ -1,0 +1,14 @@
+http:
+  middlewares:
+    https-redirect:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    ipwhitelist:
+      ipWhiteList:
+        sourceRange:
+          - "192.168.124.0/24"
+    auth:
+      basicAuth:
+        usersFile: '/data/config/usersFile'
+

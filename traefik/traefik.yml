@@ -1,0 +1,28 @@
+api:
+  insecure: true
+  dashboard: true
+  debug: false
+
+log:
+  filePath: /data/traefik.log
+  level: INFO
+
+providers:
+  docker:
+    exposedByDefault: false
+  file:
+    directory: /data/config
+
+entryPoints:
+  web:
+    address: :80
+  web-secured:
+    address: :443
+
+certificatesResolvers:
+  le:
+    acme:
+      email: '{{ env "EMAIL" }}'
+      storage: /data/acme.json
+      httpChallenge:
+        entryPoint: web

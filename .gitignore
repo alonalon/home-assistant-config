@@ -22,3 +22,7 @@ deconz/zcldb.txt
 .env
 srv
 .vscode
+traefik/acme.json
+traefik/certs/
+traefik/traefik.log
+traefik/config/usersFile

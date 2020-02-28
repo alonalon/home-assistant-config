@@ -1,141 +1,88 @@
 version: '3.7'
 
 networks:
-  traefik-net:
-    driver: bridge
+  web:
+    external: false
+    name: web
+
+volumes:
+  portainer:
 
 services:
   traefik:
-    image: traefik
+    image: traefik:v2.1
     container_name: traefik
     restart: always
-    ports:
-       - target: 80
-         published: 80
-         mode: host
-       - target: 443
-         published: 443
-         mode: host
+    environment:
+      - EMAIL
+      - DOMAIN
     networks:
-      - traefik-net
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # So that Traefik can listen to the Docker events
-      - /opt/traefik/acme.json:/acme.json
-    labels:
-      traefik.enable: "true"
-      traefik.port: 8080
-      traefik.frontend.rule: "Host:${DOMAIN_TRAEFIK}"
-      traefik.frontend.entryPoints: "https"
-      traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
-    command:
-      - "--entryPoints=Name:http Address::80"
-      - "--entryPoints=Name:https Address::443 TLS"
-      - "--defaultentrypoints=http,https"
-      - "--api"
-      - "--api.entryPoint=traefik"
-      - "--api.dashboard=true"
-      - "--docker"
-      - "--docker.watch"
-      - "--docker.exposedByDefault=false"
-      - "--docker.endpoint=unix:///var/run/docker.sock"
-      - "--docker.network=home_traefik-net"
-      - "--acme"
-      - "--acme.storage=acme.json"
-      - "--acme.entryPoint=https"
-      - "--acme.httpChallenge.entryPoint=http"
-      - "--acme.onHostRule=true"
-      - "--acme.onDemand=false"
-      - "--acme.email=aronhafner@gmail.com"
-      - "--traefikLog.format=json"
-      - "--logLevel=INFO"
-
-  portainer:
-    image: portainer/portainer
-    container_name: portainer
-    restart: always
+      - web
     ports:
-      - 9000:9000
-    networks:
-      - traefik-net
+      - 80:80
+      - 443:443
+      - 8080:8080
+    command: --configFile=/data/traefik.yml
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./srv/portainer/data:/data
-    labels:
-      traefik.enable: "true"
-      traefik.port: 9000
-      traefik.frontend.rule: "Host:${DOMAIN_PORTAINER}"
-      traefik.frontend.entryPoints: "https"
-      traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
+      - ./traefik:/data
 
   home-assistant:
     image: homeassistant/home-assistant:0.104.2
     container_name: home-assistant
     restart: always
     networks:
-      - traefik-net
+      - web
     volumes:
       - ./home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
     devices:
-      - /dev/ttyACM0:/dev/zwave
+      - /dev/zwave
+      - /dev/zigbee
     labels:
-      traefik.enable: "true"
-      traefik.port: 8123
-      traefik.frontend.rule: "Host:${DOMAIN_HOMEASSISTANT}"
-      traefik.frontend.entryPoints: "https"
+      traefik.enable: true
+      traefik.http.services.home-assistant.loadbalancer.server.port: 8123
+      traefik.http.routers.home-assistant.rule: Host(`home.$DOMAIN`)
+      traefik.http.routers.home-assistant.tls.certResolver: le
+      traefik.http.routers.home-assistant.entrypoints: web-secured
 
-  deconz:
-    image: marthoc/deconz:amd64-2.05.72
-    container_name: deconz
-    restart: unless-stopped
+  portainer:
+    image: portainer/portainer:latest
+    container_name: portainer
     networks:
-      - traefik-net
-    ports:
-      - 5900:5900
+      - web
     volumes:
-      - ./deconz:/root/.local/share/dresden-elektronik/deCONZ
-      - /etc/localtime:/etc/localtime:ro
-    devices:
-      - /dev/conbee:/dev/ttyUSB0
-    environment:
-      - DECONZ_WEB_PORT=8080
-      - DECONZ_VNC_MODE=1
-      - DECONZ_VNC_PORT=5900
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer:/data
     labels:
-      traefik.enable: "true"
-      traefik.port: 8080
-      traefik.frontend.rule: "Host:${DOMAIN_DECONZ}"
-      traefik.frontend.entryPoints: "http"
-      traefik.frontend.whiteList.sourceRange: "192.168.124.0/24"
+      traefik.enable: true
+      traefik.http.routers.portainer.rule: Host(`portainer.${DOMAIN}`)
+      traefik.http.routers.portainer.tls.certResolver: le
+      traefik.http.routers.portainer.entrypoints: web-secured
 
   mqtt:
     image: eclipse-mosquitto
     container_name: mqtt
     restart: unless-stopped
     networks:
-      - traefik-net
+      - web
     ports:
       - 1883:1883
       - 9001:9001
     volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
-    environment:
-      - PGID=0
-      - PUID=0
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
     labels:
-      traefik.enable: "false"
+      traefik.enable: false
 
-  appdaemon:
-    image: acockburn/appdaemon:latest
-    container_name: appdaemon
-    restart: always
-    networks:
-      - traefik-net
-    ports:
-      - 5050:5050
-    volumes:
-      - ./appdaemon:/conf/
-    labels:
-      traefik.enable: "false"
+# WHOAMI CONTAINER FOR TESTING
+#   whoami:
+#    image: containous/whoami
+#    container_name: whoami
+#    networks:
+#      - web
+#    labels:
+#      traefik.enable: true
+#      traefik.http.routers.whoami.entrypoints: web-secured
+#      traefik.http.routers.whoami.rule: Host(`whoami.$DOMAIN`)
+#      traefik.http.routers.whoami.tls.certresolver: le
+#      traefik.http.routers.whoami.middlewares: auth@file

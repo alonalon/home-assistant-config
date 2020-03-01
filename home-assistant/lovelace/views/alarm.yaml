@@ -1,0 +1,45 @@
+title: Alarm
+icon: mdi:clock
+panel: true
+path: alarm
+cards:
+  - type: custom:layout-card
+    layout: vertical
+    cards:
+      - type: entities
+        title: Radio
+        show_header_toggle: false
+        icon: mdi:radio
+        entities:
+          - entity: input_select.radio_station
+            name: Radio Station
+          - entity: input_select.chromecast_radio
+            name: Speaker
+          - entity: input_number.volume_radio
+            name: volume
+          - entity: script.radio
+            name: Play
+            icon: mdi:play
+            call_service:
+              name: Play
+          - entity: script.radio_off
+            name: Stop
+            icon: mdi:stop
+      - break
+
+      - type: entities
+        title: Alarm
+        icon: mdi:alarm
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.alarm_enable
+            name: Enable alarm
+          - entity: sensor.alarm_time
+            name: Alarm Time
+            icon: mdi:clock
+          - entity: input_number.alarm_hour
+            name: Hour
+          - entity: input_number.alarm_minutes
+            name: Minutes
+          - entity: input_number.alarm_offset
+            name: Offset

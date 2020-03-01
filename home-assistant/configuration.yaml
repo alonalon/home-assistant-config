@@ -24,7 +24,9 @@ notify:
 system_health:
 mobile_app:
 logger:
-  default: critical
+  default: info
+  logs:
+    homeassistant.components.automation: debug
 
 http:
   base_url: !secret http_base_url
@@ -38,7 +40,8 @@ person:
   - name: Aron
     id: arontracker
     device_trackers:
-      - device_tracker.presence_aron
+      - device_tracker.arons_iphone
+#      - device_tracker.presence_aron
 
 tts:
   - platform: google_translate
@@ -46,6 +49,8 @@ tts:
 zha:
   usb_path: /dev/zigbee
   radio_type: deconz
+
+zha_map:
 
 hacs:
   token: !secret github_token

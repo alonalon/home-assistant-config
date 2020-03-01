@@ -20,3 +20,4 @@ srv/
 .storage
 *.tile.conf
 www
+neighbours

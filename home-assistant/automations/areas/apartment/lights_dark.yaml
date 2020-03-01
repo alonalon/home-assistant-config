@@ -18,9 +18,9 @@ condition:
 action:
   - service: light.turn_on
     entity_id:
-      - light.kitchen_lights
+      - group.kitchen_lights
       - light.livingroom_floor
       - light.bedroom_drawer
-      - light.tv
+      - light.tv_lightstrip
       - light.office
       - light.entrance

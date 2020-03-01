@@ -7,4 +7,6 @@ resources: !include_dir_list lovelace/resources
 views:
   - !include lovelace/views/home_view.yaml
   - !include lovelace/views/server_view.yaml
+  - !include lovelace/views/alarm.yaml
   - !include lovelace/views/dev_view.yaml
+  - !include lovelace/views/zha-network.yaml

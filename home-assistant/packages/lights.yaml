@@ -13,6 +13,8 @@ homeassistant:
       friendly_name: Living room floor light
     light.bedroom_drawer:
       friendly_name: Bedroom drawer light
+    light.livingroom_ceiling:
+      friendly_name: Living room ceiling light
 
 light:
   - platform: mqtt

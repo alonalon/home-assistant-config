@@ -67,14 +67,18 @@ automation:
         seconds: 00
     condition:
       - condition: template
-        value_template: "{{ states.sensor.time.state == states.sensor.alarm_time_minus_offset.state  }}"
+        value_template: "{{ states.sensor.time.state == states.sensor.alarm_time_minus_offset.state }}"
       - condition: state
         entity_id: input_boolean.alarm_enable
         state: 'on'
       - condition: state
         entity_id: person.aron
-        state: 'Home'
+        state: 'home'
     action:
+      - service: notify.notify
+        data_template:
+          message: >
+            Aron your alarm for is ringing
       - service: script.radio
       - service: light.turn_on
         data:

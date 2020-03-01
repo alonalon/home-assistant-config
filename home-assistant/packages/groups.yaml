@@ -7,7 +7,7 @@ group:
     - sensor.fibaro_system_motion_sensor_temperature
     - sensor.fibaro_system_motion_sensor_luminance
     - sensor.living_room_motion
-    - light.tv
+    - light.tv_lightstrip
     - light.livingroom_ceiling
     - light.livingroom_floor
 

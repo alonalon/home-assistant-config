@@ -4,10 +4,10 @@
 
 homeassistant:
   customize:
-    device_tracker.iphone:
+    device_tracker.arons_iphone:
       friendly_name: Aron
       icon: mdi:human-male
-    sensor.iphone_battery_level:
+    sensor.iphone_battery_state:
       friendly_name: Battery
       icon: mdi:battery
 

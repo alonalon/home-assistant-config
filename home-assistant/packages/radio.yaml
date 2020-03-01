@@ -48,7 +48,6 @@ input_number:
 
 automation:
   - alias: Listen Radio
-    hide_entity: True
     trigger:
       - platform: state
         entity_id: input_select.radio_station

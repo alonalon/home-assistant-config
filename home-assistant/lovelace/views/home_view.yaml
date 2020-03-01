@@ -62,7 +62,7 @@ cards:
             show_header_toggle: false
             entities:
               - entity: light.livingroom_floor
-              - entity: light.tv
+              - entity: light.tv_lightstrip
               - entity: light.livingroom_ceiling
               - entity: light.office
 
@@ -90,7 +90,7 @@ cards:
                   padding: 20px !important;
                 }
               entities:
-                - sensor.kitchen_temperature_3
+                - sensor.kitchen_humidity
               name: Humidity
               line_color: '#44BBA4'
               line_width: 8
@@ -98,8 +98,8 @@ cards:
           - type: entities
             show_header_toggle: false
             entities:
-              - entity: sensor.kitchen_temperature_2
-              - entity: binary_sensor.water
+              - entity: sensor.kitchen_pressure
+              - entity: binary_sensor.water_leak
               - entity: binary_sensor.refrigerator_sensor
               - entity: binary_sensor.freezer_sensor
               - entity: binary_sensor.sf20_smoke_sensor
@@ -109,6 +109,9 @@ cards:
             entities:
               - entity: group.kitchen_lights
               - entity: light.kitchen_table
+              - entity: light.kitchen_1
+              - entity: light.kitchen_2
+              - entity: light.kitchen_3
 
         - break
 
@@ -125,7 +128,7 @@ cards:
                   padding: 20px !important;
                 }
               entities:
-                - sensor.bedroom_temperature_3
+                - sensor.bedroom_temperature
               name: Temperature
               line_color: '#44BBA4'
               line_width: 8
@@ -136,7 +139,7 @@ cards:
                   padding: 20px !important;
                 }
               entities:
-                - sensor.bedroom_temperature_2
+                - sensor.bedroom_humidity
               name: Humidity
               line_color: '#44BBA4'
               line_width: 8
@@ -144,7 +147,7 @@ cards:
           - type: entities
             show_header_toggle: false
             entities:
-              - entity: sensor.bedroom_temperature
+              - entity: sensor.bedroom_pressure
           - type: entities
             title: Lights
             show_header_toggle: false

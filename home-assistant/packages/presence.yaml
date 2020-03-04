@@ -7,37 +7,9 @@ homeassistant:
     device_tracker.arons_iphone:
       friendly_name: Aron
       icon: mdi:human-male
-    sensor.iphone_battery_state:
+    sensor.battery_level:
       friendly_name: Battery
       icon: mdi:battery
 
-# Presence
-# State topic should be monitor/home/owner/apartment/MAC
-sensor:
-  - platform: mqtt
-    name: aron_iphone_bt
-    state_topic: !secret mqtt_presence_topic
-    value_template: >
-     {% if float(value_json.confidence) > 0 %}
-      home
-     {% else %}
-      not_home
-     {% endif %}
-    json_attributes_topic: !secret mqtt_presence_topic
-
-binary_sensor:
-  - platform: template
-    sensors:
-      just_arrived:
-        friendly_name: Just Arrived
-        value_template: "{{ is_state('person.aron', 'Just arrived') }}"
-
-# Aproximity
-proximity:
-  home_aron:
-    zone: home
-    devices:
-      - device_tracker.iphone
-    tolerance: 50
 
 

@@ -5,6 +5,7 @@
 *.db-journal
 *.db-shm
 *.db-wal
+*.json
 OZW_Log.txt
 deps
 tts
@@ -26,3 +27,4 @@ traefik/acme.json
 traefik/certs/
 traefik/traefik.log
 traefik/config/usersFile
+automations.yaml

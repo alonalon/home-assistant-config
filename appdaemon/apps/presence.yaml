@@ -1,0 +1,14 @@
+presence_aron:
+  module: presence
+  class: Presence
+  global_dependencies:
+    - entities
+    - timers
+  dependencies:
+    - entity_manager
+
+  name: device_tracker.aron_presence
+  attributes: {}
+
+  devices:
+    - device_tracker.arons_iphone

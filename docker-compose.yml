@@ -74,6 +74,22 @@ services:
     labels:
       traefik.enable: false
 
+  appdaemon:
+    image: acockburn/appdaemon:latest
+    container_name: appdaemon
+    restart: always
+    networks:
+      - web
+    ports:
+      - 5050:5050
+    volumes:
+      - ./appdaemon:/conf/
+    environment:
+      TZ: Europe/Stockholm
+      EXTRA_CMD: -D INFO
+    labels:
+      traefik.enable: false
+
 # WHOAMI CONTAINER FOR TESTING
 #   whoami:
 #    image: containous/whoami

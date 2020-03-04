@@ -1,11 +1,23 @@
+---
+api:
+
 secrets: /conf/secrets.yaml
 appdaemon:
   logfile: STDOUT
   errorfile: STDERR
   threads: 10
   app_dir: /conf/apps
+
+  latitude: !secret base_latitude
+  longitude: !secret base_longitude
+  elevation: !secret base_elevation
+  time_zone: !secret base_time_zone
+
   plugins:
     HASS:
       type: hass
       ha_url: !secret ha_url
-      token: !secret ha_key
+      token: !secret ha_token
+
+http:
+  url: http://appdaemon:5051

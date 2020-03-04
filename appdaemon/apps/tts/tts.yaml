@@ -1,4 +1,0 @@
----
-tts_manager:
-  module: tts
-  class: TTSManager

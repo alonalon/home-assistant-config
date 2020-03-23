@@ -7,3 +7,4 @@ media_player:
     host: !secret bravia_tv
     mac: !secret bravia_mac
     psk: !secret bravia_psk
+    android: True

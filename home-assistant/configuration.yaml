@@ -38,7 +38,7 @@ person:
   - name: Aron
     id: arontracker
     device_trackers:
-      - device_tracker.arons_iphone
+      - device_tracker.aron_presence
 
 tts:
   - platform: google_translate

@@ -28,7 +28,7 @@ services:
       - ./traefik:/data
 
   home-assistant:
-    image: homeassistant/home-assistant:0.106.1
+    image: homeassistant/home-assistant:0.108.3
     container_name: home-assistant
     restart: always
     networks:

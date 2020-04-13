@@ -21,3 +21,4 @@ srv/
 *.tile.conf
 www
 neighbours
+custom_components/*

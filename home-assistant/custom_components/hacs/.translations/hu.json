@@ -13,6 +13,8 @@
         "integration": "Integráció",
         "integrations": "Integrációk",
         "manage": "kezelés",
+        "netdaemon": "NetDaemon",
+        "netdaemon_apps": "NetDaemon Appok",
         "plugin": "Bővítmény",
         "plugins": "Bővítmények",
         "python_script": "Python Szkript",
@@ -34,6 +36,7 @@
             "user": {
                 "data": {
                     "appdaemon": "AppDaemon appok felfedezésének és nyomon követésének engedélyezése",
+                    "netdaemon": "NetDaemon appok felfedezésének és nyomon követésének engedélyezése",
                     "python_script": "Python szkriptek felfedezésének és nyomon követésének engedélyezése",
                     "sidepanel_icon": "Oldalsó panel ikon",
                     "sidepanel_title": "Oldalsó panel cím",
@@ -56,6 +59,7 @@
         "exist": "{item} már létezik",
         "generic": "Biztos vagy benne?",
         "home_assistant_is_restarting": "Várj, a Home Assistant éppen újraindul.",
+        "home_assistant_version_not_correct": "A Home Assistant '{haversion}' verzióját használod, de ehhez a tárolóhoz legalább a(z) '{minversion}' verzióra van szükség.",
         "no": "Nem",
         "no_upgrades": "Nincs függőben lévő frissítés",
         "ok": "OK",
@@ -70,16 +74,22 @@
         "step": {
             "user": {
                 "data": {
+                    "appdaemon": "AppDaemon appok felfedezésének és nyomon követésének engedélyezése",
                     "country": "Szűrés országkóddal.",
                     "debug": "Hibakeresés engedélyezése.",
                     "experimental": "Kísérleti funkciók engedélyezése",
-                    "release_limit": "Megjelenítendő kiadások száma."
+                    "netdaemon": "NetDaemon appok felfedezésének és nyomon követésének engedélyezése",
+                    "not_in_use": "YAML-lel nem használható",
+                    "release_limit": "Megjelenítendő kiadások száma.",
+                    "sidepanel_icon": "Oldalsó panel ikon",
+                    "sidepanel_title": "Oldalsó panel cím"
                 }
             }
         }
     },
     "repository_banner": {
-        "config_flow": "Ez az integráció támogatja a config_flow-t, vagyis a felhasználó felületen az integrációk menüben lehet konfigurálni.",
+        "config_flow": "Ez az integráció támogatja a config_flow-t, vagyis a felhasználói felületen az integrációk menüben lehet konfigurálni.",
+        "config_flow_title": "A felhasználói felület konfigurációja támogatott",
         "integration_not_loaded": "Ez az integráció nincs betöltve a Home Assistantban.",
         "no_restart_required": "Nincs szükség újraindításra",
         "not_loaded": "Nincs betöltve",
@@ -110,6 +120,7 @@
         "note_installed": "Telepítéskor a következő helyre kerül:",
         "note_integration": "de még hozzá kell adnod a 'configuration.yaml' fájlhoz",
         "note_plugin": "de még hozzá kell adnod a lovelace konfigurációhoz (az 'ui-lovelace.yaml' fájlban vagy a Lovelace felületen a konfiguráció szerkesztőben)",
+        "note_plugin_post_107": "de még hozzá kell adnod a lovelace konfigurációhoz ('configuration.yaml' vagy az erőforrás szerkesztőben '\/config\/lovelace\/resources')",
         "open_issue": "Probléma jelentése",
         "open_plugin": "Bővítmény megnyitása",
         "reinstall": "Újratelepítés",

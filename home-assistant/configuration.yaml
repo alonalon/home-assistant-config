@@ -47,8 +47,6 @@ zha:
   usb_path: /dev/zigbee
   radio_type: deconz
 
-zha_map:
-
 hacs:
   token: !secret github_token
   appdaemon: true

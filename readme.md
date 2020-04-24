@@ -24,7 +24,7 @@ Before start containers enviroment variables need to be setup in a .env file
 ```
 $ sudo touch .env
 $ echo "EMAIL=<redacted>" | sudo tee -a .env
-$ echo "DOMAIN_=<redacted>" | sudo tee -a .env
+$ echo "DOMAIN=<redacted>" | sudo tee -a .env
 ```
 
 ### Persistent USB

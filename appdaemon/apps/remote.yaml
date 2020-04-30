@@ -1,0 +1,10 @@
+remote:
+  module: remote
+  class: Remote
+  global_dependencies:
+    - entities
+  dependencies:
+    - entity_manager
+  lights:
+    - light.office
+    - light.tv

@@ -32,8 +32,6 @@ cards:
           title: Living room 🛋
           cards:
           - type: horizontal-stack
-            title: Values
-            show_header_toggle: true
             cards:
             - type: custom:mini-graph-card
               style: |
@@ -70,8 +68,6 @@ cards:
           title: Kitchen 🍽
           cards:
           - type: horizontal-stack
-            title: Values
-            show_header_toggle: true
             cards:
             - type: custom:mini-graph-card
               style: |
@@ -107,7 +103,7 @@ cards:
             title: Lights
             show_header_toggle: false
             entities:
-              - entity: group.kitchen_lights
+              - entity: light.kitchen_lights
               - entity: light.kitchen_table
               - entity: light.kitchen_1
               - entity: light.kitchen_2
@@ -119,8 +115,6 @@ cards:
           title: Bedroom 🛏
           cards:
           - type: horizontal-stack
-            title: Values
-            show_header_toggle: true
             cards:
             - type: custom:mini-graph-card
               style: |

@@ -48,12 +48,3 @@ switch:
           service: light.turn_off
           data:
             entity_id: all
-
-group:
-  kitchen_lights:
-    name:  Kitchen Lights
-    entities:
-      - light.kitchen_1
-      - light.kitchen_2
-      - light.kitchen_3
-

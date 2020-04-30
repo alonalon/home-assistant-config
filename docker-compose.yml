@@ -28,7 +28,7 @@ services:
       - ./traefik:/data
 
   home-assistant:
-    image: homeassistant/home-assistant:0.108.3
+    image: homeassistant/home-assistant:0.108.9
     container_name: home-assistant
     restart: always
     networks:
@@ -42,7 +42,7 @@ services:
     labels:
       traefik.enable: true
       traefik.http.services.home-assistant.loadbalancer.server.port: 8123
-      traefik.http.routers.home-assistant.rule: Host(`home.$DOMAIN`)
+      traefik.http.routers.home-assistant.rule: Host(`home.${DOMAIN}`)
       traefik.http.routers.home-assistant.tls.certResolver: le
       traefik.http.routers.home-assistant.entrypoints: web-secured
 
@@ -100,6 +100,6 @@ services:
 #    labels:
 #      traefik.enable: true
 #      traefik.http.routers.whoami.entrypoints: web-secured
-#      traefik.http.routers.whoami.rule: Host(`whoami.$DOMAIN`)
+#      traefik.http.routers.whoami.rule: Host(`whoami.${DOMAIN}`)
 #      traefik.http.routers.whoami.tls.certresolver: le
 #      traefik.http.routers.whoami.middlewares: auth@file

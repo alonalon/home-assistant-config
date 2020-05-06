@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/alonalon/home.svg?style=svg)](https://circleci.com/gh/alonalon/home)
+[![CircleCI](https://circleci.com/gh/hafffe/home.svg?style=svg)](https://circleci.com/gh/hafffe/home)
 
 ## Home configuration
 > A bunch of tools to automate my home
@@ -50,9 +50,9 @@ $ /bin/udevadm info --name=/dev/ttyUSB0 | grep SERIAL_SHORT
 E: ID_SERIAL_SHORT=ABC01234
 ```
 
-My usb devices are a Aeon [Aeon Z-stick gen 5](https://aeotec.com/z-wave-usb-stick/)
+My usb devices are Aeon [Aeon Z-stick gen 5](https://aeotec.com/z-wave-usb-stick/)
 and [Conbee version 1](https://phoscon.de/en/conbee) and have the following attributes.
-Check this [ths guide](http://hintshop.ludvig.co.nz/show/persistent-names-usb-serial-devices/) to findout details.
+Check this [this guide](http://hintshop.ludvig.co.nz/show/persistent-names-usb-serial-devices/) to findout details.
 
 Go to `/etc/udev/rules.d` create new file called `99-usb-serial.rules` and add the devices.
 Disclaimer: The following paths are just for my usb devices.

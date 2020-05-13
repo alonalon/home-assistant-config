@@ -27,6 +27,27 @@ $ echo "EMAIL=<redacted>" | sudo tee -a .env
 $ echo "DOMAIN=<redacted>" | sudo tee -a .env
 ```
 
+Some integrations in home-assistant can't be discovered if on different subnets.
+(e.g [cast](https://www.home-assistant.io/integrations/cast/#docker-and-cast-devices-and-home-assistant-on-different-subnets)) therefore it's needed to either run home-assistant container in `network_mode: host` or with a network with `macvlan` as driver.
+
+To define a network with `macvlan` run
+
+```
+docker network create -d macvlan \
+  --subnet=192.168.1.0/24 \
+  --ip-range=192.168.1.192/27 \
+  --gateway=192.168.1.1 \
+  -o parent=eno1 lan
+```
+
+In my router's settings, I've deciced to not assign any addresses above 192.168.1.190, and assign Docker the subset 192.168.1.192/27, which is a range of 32 address starting at 192.168.1.192 and ending at 192.168.1.223.
+
+Replace subnet with your router's network adress, and gateway should be your routers ip, parent is the physical network for your server, and `lan` is the name.
+
+[macvlan networks](https://blog.oddbit.com/post/2018-03-12-using-docker-macvlan-networks/)
+
+[docker docs](https://docs.docker.com/v18.09/network/macvlan/)
+
 ### Persistent USB
 list usb devices with `lsusb`
 

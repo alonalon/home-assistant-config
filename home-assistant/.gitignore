@@ -18,6 +18,5 @@ sensors
 srv/
 .cloud
 .storage
-*.tile.conf
 www
 neighbours

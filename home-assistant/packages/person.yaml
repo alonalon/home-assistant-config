@@ -1,0 +1,14 @@
+---
+##
+## Persons
+##
+homeassistant:
+  customize:
+    person.aron:
+      entity_picture: "/local/Image.png"
+
+person:
+  - name: Aron
+    id: arontracker
+    device_trackers:
+      - device_tracker.aron_presence

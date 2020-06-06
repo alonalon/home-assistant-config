@@ -5,6 +5,7 @@ homeassistant:
   elevation: 143
   unit_system: metric
   time_zone: Europe/Stockholm
+  external_url: !secret http_base_url
   packages: !include_dir_named packages
 
 frontend:
@@ -27,18 +28,11 @@ logger:
   default: info
 
 http:
-  base_url: !secret http_base_url
   use_x_forwarded_for: true
   trusted_proxies: !secret http_ip_range
 
 lovelace:
   mode: yaml
-
-person:
-  - name: Aron
-    id: arontracker
-    device_trackers:
-      - device_tracker.aron_presence
 
 tts:
   - platform: google_translate

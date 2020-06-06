@@ -6,7 +6,7 @@
 alias: Turn on lights when dark
 trigger:
   - platform: numeric_state
-    entity_id: sensor.fibaro_system_motion_sensor_luminance
+    entity_id: sensor.fibaro_sensor_luminance
     below: '50'
 condition:
   - condition: state
@@ -18,7 +18,9 @@ condition:
 action:
   - service: light.turn_on
     entity_id:
-      - group.kitchen_lights
+      - light.kitchen_1
+      - light.kitchen_2
+      - light.kitchen_3
       - light.livingroom_floor
       - light.bedroom_drawer
       - light.tv_lightstrip

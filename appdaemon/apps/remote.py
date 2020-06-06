@@ -9,9 +9,9 @@ class Remote(Entities):
 	def event(self, ev, data, kwargs):
 		command = data.get('command');
 		if command == 'on':
-			self.turn_on("light.kitchen_lights")
+			self.turn_on("light.kitchen_lights_zha")
 		if command == 'step':
 			self.log('STEP!!')
 			self.log(data)
 		if command == 'off_with_effect':
-			self.turn_off("light.kitchen_lights")
+			self.turn_off("light.kitchen_lights_zha")

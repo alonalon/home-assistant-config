@@ -34,6 +34,25 @@ light:
     payload_off: "OFF"
     retain: true
 
+  - platform: group
+    name: Kitchen Lights
+    entities:
+      - light.kitchen_lights_zha
+      - light.kitchen_table
+
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.livingroom_floor
+      - light.tv_lightstrip
+      - light.livingroom_ceiling
+
+  - platform: group
+    name: Bedroom Lights
+    entities:
+      - light.bedroom_drawer
+      - light.bedroom_ceiling
+
 switch:
   - platform: template
     switches:

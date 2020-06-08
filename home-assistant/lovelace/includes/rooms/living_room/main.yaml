@@ -1,0 +1,56 @@
+type: custom:mod-card
+style: |
+  ha-card {
+    box-shadow: none;
+    background-color: var(--text-primary-color);
+    padding: 10px 5px;
+  }
+card:
+  type: custom:layout-card
+  layout: vertical
+  cards:
+    - type: custom:button-card
+      template: room
+      name: Living Room 🛋
+    - type: horizontal-stack
+      cards:
+        - type: custom:button-card
+          entity: light.living_room_lights_group
+          name: 'Lights'
+          template: light
+        - type: custom:button-card
+          entity: sensor.fibaro_sensor_temperature
+          template: sensor
+        - type: custom:button-card
+          entity: sensor.fibaro_sensor_luminance
+          template: sensor
+        - type: custom:button-card
+          entity: binary_sensor.fibaro_sensor_motion
+          show_last_changed: yes
+          show_state: false
+          icon: mdi:run
+          template: sensor
+    - type: vertical-stack
+      cards:
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: Lights
+          entities:
+            - type: custom:decluttering-card
+              template: lights
+              variables:
+                - entity: light.livingroom_floor
+                - toggle: true
+            - type: custom:decluttering-card
+              template: lights
+              variables:
+                - entity: light.office
+            - type: custom:decluttering-card
+              template: lights
+              variables:
+                - entity: light.livingroom_ceiling
+            - type: custom:decluttering-card
+              template: lights
+              variables:
+                - entity: light.tv_lightstrip

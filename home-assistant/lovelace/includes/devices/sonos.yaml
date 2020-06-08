@@ -1,0 +1,25 @@
+type: entities
+entities:
+  - type: custom:decluttering-card
+    template: media_player
+    variables:
+      - entity: media_player.living_room_sonos
+      - group: true
+      - hide_power: true
+      - hide_icon: false
+      - speaker_group:
+          platform: sonos
+          show_group_count: true
+          entities:
+            - entity_id: media_player.living_room_sonos
+              name: Sonos Living Room
+            - entity_id: media_player.kitchen_sonos
+              name: Sonos Kitchen
+  - type: custom:decluttering-card
+    template: media_player
+    variables:
+      - entity: media_player.kitchen_sonos
+      - icon: mdi:cast-audio
+      - group: true
+      - hide_controls: true
+      - hide_icon: true

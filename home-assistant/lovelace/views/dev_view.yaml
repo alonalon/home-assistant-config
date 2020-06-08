@@ -1,5 +1,197 @@
-title: Dev
-icon: mdi:hammer
+title: Home
+icon: mdi:home-automation
 panel: true
-path: dev
+path: home
 cards:
+    - type: custom:layout-card
+      layout: vertical
+      cards:
+        - type: glance
+          entities:
+            - entity: person.aron
+        - type: entities
+          title: Fast track 🚆
+          show_header_toggle: false
+          entities:
+          - entity: switch.all_lights
+            name: All Lights
+            icon: mdi:lamp
+          - entity: input_boolean.guest_mode
+            name: Guests
+          - entity: input_boolean.cleaning_mode
+            name: Cleaning
+          - entity: input_boolean.vacation_mode
+            name: Vacation
+        - type: glance
+          title: Vacuum 🧹
+          entities:
+            - vacuum.xiaomi_vacuum_cleaner
+        - break
+
+        - type: custom:vertical-stack-in-card
+          title: Living room 🛋
+          cards:
+          - type: horizontal-stack
+            cards:
+            - type: custom:mini-graph-card
+              style: |
+                ha-card {
+                  padding: 20px !important;
+                }
+              entities:
+                - sensor.fibaro_system_motion_sensor_temperature
+              name: Temperature
+              line_color: '#44BBA4'
+              line_width: 8
+              hours_to_show: 168
+            - type: custom:mini-graph-card
+              style: |
+                ha-card {
+                  padding: 20px !important;
+                }
+              entities:
+                - sensor.fibaro_system_motion_sensor_luminance
+              name: Lux
+              line_color: '#44BBA4'
+              line_width: 8
+              hours_to_show: 168
+          - type: entities
+            title: Lights
+            show_header_toggle: false
+            entities:
+              - entity: light.livingroom_floor
+              - entity: light.tv_lightstrip
+              - entity: light.livingroom_ceiling
+              - entity: light.office
+
+        - type: custom:vertical-stack-in-card
+          title: Kitchen 🍽
+          cards:
+          - type: horizontal-stack
+            cards:
+            - type: custom:mini-graph-card
+              style: |
+                ha-card {
+                  padding: 20px !important;
+                }
+              entities:
+                - sensor.kitchen_temperature
+              name: Temperature
+              line_color: '#44BBA4'
+              line_width: 8
+              hours_to_show: 168
+            - type: custom:mini-graph-card
+              style: |
+                ha-card {
+                  padding: 20px !important;
+                }
+              entities:
+                - sensor.kitchen_humidity
+              name: Humidity
+              line_color: '#44BBA4'
+              line_width: 8
+              hours_to_show: 168
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: sensor.kitchen_pressure
+              - entity: binary_sensor.water_leak
+              - entity: binary_sensor.refrigerator_sensor
+              - entity: binary_sensor.freezer_sensor
+              - entity: binary_sensor.sf20_smoke_sensor
+          - type: entities
+            title: Lights
+            show_header_toggle: false
+            entities:
+              - entity: light.kitchen_lights
+              - entity: light.kitchen_table
+              - entity: light.kitchen_1
+              - entity: light.kitchen_2
+              - entity: light.kitchen_3
+
+        - break
+
+        - type: custom:vertical-stack-in-card
+          title: Bedroom 🛏
+          cards:
+          - type: horizontal-stack
+            cards:
+            - type: custom:mini-graph-card
+              style: |
+                ha-card {
+                  padding: 20px !important;
+                }
+              entities:
+                - sensor.bedroom_temperature
+              name: Temperature
+              line_color: '#44BBA4'
+              line_width: 8
+              hours_to_show: 168
+            - type: custom:mini-graph-card
+              style: |
+                ha-card {
+                  padding: 20px !important;
+                }
+              entities:
+                - sensor.bedroom_humidity
+              name: Humidity
+              line_color: '#44BBA4'
+              line_width: 8
+              hours_to_show: 168
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: sensor.bedroom_pressure
+          - type: entities
+            title: Lights
+            show_header_toggle: false
+            entities:
+              - entity: light.bedroom_drawer
+              - entity: light.bedroom_ceiling
+
+        - type: custom:vertical-stack-in-card
+          title: Appartment 🏠
+          cards:
+          - type: entities
+            title: Lights
+            show_header_toggle: false
+            entities:
+              - entity: light.entrance
+              - entity: light.closet
+          - type: entities
+            title: Switches
+            show_header_toggle: false
+            entities:
+              - entity: switch.switch_1
+              - entity: switch.switch_2
+
+        - type: custom:vertical-stack-in-card
+          title: Entertainment 🎬
+          cards:
+            - type: entities
+              show_header_toggle: false
+              entities:
+                - entity: media_player.sony_bravia_tv
+                  type: custom:mini-media-player
+                  icon: mdi:television-classic
+                  artwork_border: true
+                  show_source: true
+                - entity: media_player.chromecast
+                  type: custom:mini-media-player
+                  icon: mdi:cast-connected
+                  artwork_border: true
+                  show_source: true
+                - entity: media_player.living_room_sonos
+                  type: custom:mini-media-player
+                  icon: mdi:spotify
+                  artwork_border: true
+                  show_source: true
+                  short_info: true
+                - entity: media_player.bedroom_google_home
+                  type: custom:mini-media-player
+                  icon: mdi:google-home
+                  artwork_border: true
+                  show_source: true
+                  short_info: true
+
+

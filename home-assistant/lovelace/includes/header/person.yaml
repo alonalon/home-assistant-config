@@ -1,0 +1,9 @@
+type: custom:button-card
+entity: person.aron
+template: person
+gridrow: 1 / 1
+gridcol: 2 / 2
+style: |
+  ha-card {
+    box-shadow: none;
+  }

@@ -2,10 +2,12 @@ custom_header:
   compact_mode: true
   hide_config: true
   hide_help: true
-title: Home
+  hide_header: false
+  footer_mode: true
+  show_tabs: 'home'
+title: ' '
 resources: !include_dir_list lovelace/resources
+button_card_templates: !include lovelace/templates/button_card_templates.yaml
+decluttering_templates: !include lovelace/templates/decluttering_card_templates.yaml
 views:
   - !include lovelace/views/home_view.yaml
-  - !include lovelace/views/server_view.yaml
-  - !include lovelace/views/alarm.yaml
-  - !include lovelace/views/dev_view.yaml

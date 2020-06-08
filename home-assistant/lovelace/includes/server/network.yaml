@@ -1,0 +1,9 @@
+type: custom:decluttering-card
+template: server_graph
+variables:
+  - entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+  - icon: mdi:speedometer
+  - name: Download
+

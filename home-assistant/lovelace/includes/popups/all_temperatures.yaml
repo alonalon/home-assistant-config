@@ -1,0 +1,15 @@
+action: call-service
+service: browser_mod.command
+service_data:
+  card:
+    type: 'custom:mini-graph-card'
+    hours_to_show: 48
+    name: Average Temperatures
+    entities:
+      - sensor.fibaro_sensor_temperature
+      - sensor.kitchen_temperature
+      - sensor.bedroom_temperature
+  command: popup
+  deviceID:
+    - this
+  title: Temperatures

@@ -1,0 +1,45 @@
+
+type: custom:layout-card
+gridrow: 1 / 1
+gridcol: 1 / 2
+layout: horizontal
+justify-content: start
+max_width: 100%
+cards:
+  - type: custom:button-card
+    style: |
+      ha-card {
+        box-shadow: none;
+        padding: 10px !important;
+      }
+    styles:
+      grid:
+        - grid-template-areas: '"greeting greeting" "notification notification"'
+        - grid-template-columns: 1fr 1fr
+        - grid-template-rows: 1fr min-content min-content
+      custom_fields:
+        greeting:
+          - align-self: start
+          - justify-self: start
+          - font-size: '1.5rem'
+        notification:
+          - align-self: start
+          - justify-self: start
+    custom_fields:
+      greeting: >
+        [[[
+          var today = new Date();
+          var curHr = today.getHours();
+          if (curHr < 12) {
+            return "Good Morning ☕️";
+          } else if (curHr < 18) {
+            return "Good Afternoon";
+          } else {
+            return "Good Evening";
+          }
+        ]]]
+    notification: >
+      [[[
+        return "1 new Notification"
+      ]]]
+

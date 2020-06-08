@@ -1,0 +1,47 @@
+type: custom:mod-card
+style: |
+  ha-card {
+    box-shadow: none;
+    background-color: var(--text-primary-color);
+    padding: 10px 5px;
+  }
+card:
+  type: custom:layout-card
+  layout: vertical
+  cards:
+    - type: custom:button-card
+      template: room
+      name: Appartment 🏠
+    - type: horizontal-stack
+      cards:
+        - type: custom:button-card
+          entity: light.entrance
+          name: 'Lights'
+          template: light
+        - type: custom:button-card
+          entity: binary_sensor.water_leak
+          icon: mdi:water
+          template: sensor
+        - type: custom:button-card
+          entity: binary_sensor.sf20_smoke_sensor
+          icon: mdi:fire
+          template: sensor
+        - type: custom:button-card
+          entity: sensor.bedroom_pressure
+          template: sensor
+    - type: vertical-stack
+      cards:
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: Lights
+          entities:
+            - type: custom:decluttering-card
+              template: lights
+              variables:
+                - entity: light.bedroom_drawer
+                - toggle: true
+            - type: custom:decluttering-card
+              template: lights
+              variables:
+                - entity: light.bedroom_ceiling

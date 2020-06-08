@@ -1,0 +1,32 @@
+type: horizontal-stack
+cards:
+  - type: "custom:button-card"
+    entity: input_select.active_view
+    template: switch
+    name: "Rooms"
+    tap_action:
+      action: call-service
+      service: input_select.set_options
+      service_data:
+        entity_id: input_select.active_view
+        options: 'Rooms'
+  - type: "custom:button-card"
+    entity: input_select.active_view
+    template: switch
+    name: "Devices"
+    tap_action:
+      action: call-service
+      service: input_select.set_options
+      service_data:
+        entity_id: input_select.active_view
+        options: 'Devices'
+  - type: "custom:button-card"
+    entity: input_select.active_view
+    template: switch
+    name: "Server"
+    tap_action:
+      action: call-service
+      service: input_select.set_options
+      service_data:
+        entity_id: input_select.active_view
+        options: 'Server'

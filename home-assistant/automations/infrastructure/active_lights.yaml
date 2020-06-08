@@ -1,0 +1,16 @@
+---
+##
+## Updates active_lights sensor
+##
+
+alias: Update Active Lights Sensor
+initial_state: True
+trigger:
+  platform: event
+  event_type: state_changed
+condition:
+  condition: template
+  value_template: "{{ trigger.event.data.entity_id.startswith('light') }}"
+action:
+  service: homeassistant.update_entity
+  entity_id: sensor.active_lights

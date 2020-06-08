@@ -1,0 +1,15 @@
+type: custom:mod-card
+style: |
+  ha-card {
+    box-shadow: none;
+    background-color: var(--text-primary-color);
+    padding: 0px;
+  }
+card:
+  type: horizontal-stack
+  title: Metrics
+  cards:
+    - type: glance
+      entities:
+        - sensor.ssl_certificate_expiry
+        - sensor.last_boot

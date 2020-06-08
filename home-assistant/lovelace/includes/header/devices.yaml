@@ -1,0 +1,48 @@
+
+type: vertical-stack
+gridrow: 2 / 2
+gridcol: 1 / 2
+cards:
+  - type: custom:button-card
+    entity: sensor.active_lights
+    gridcol: 1/6
+    gridrow: 2/6
+    name: >
+      [[[
+        if (entity.state === 0) {
+          return 'All lights off.';
+        }
+        if (entity.state === 1) {
+          return '1 light on.';
+        }
+
+        return `${entity.state} lights on.`;
+      ]]]
+    template: header
+    tap_action: !include ../popups/all_lights.yaml
+  - type: custom:button-card
+    entity: sensor.average_indoor_temperature
+    gridcol: 1/6
+    gridrow: 2/6
+    name: >
+      [[[
+        return `Average Indoor temperature is ${entity.state}${entity.attributes.unit_of_measurement}`;
+      ]]]
+    template: header
+    tap_action: !include ../popups/all_temperatures.yaml
+
+  - type: conditional
+    conditions:
+      - entity: input_boolean.alarm_enable
+        state: "on"
+    card:
+      type: custom:button-card
+      entity: sensor.alarm_time
+      gridcol: 1/6
+      gridrow: 2/6
+      name: >
+        [[[
+          return `Alarm is set to ${entity.state}`;
+        ]]]
+      template: header
+      tap_action: !include ../popups/alarm_clock.yaml

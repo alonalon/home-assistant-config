@@ -1,0 +1,26 @@
+type: custom:mod-card
+gridrow: 1 / 1
+gridcol: 2 / 2
+style: |
+  ha-card {
+    box-shadow: none;
+    background-color: var(--table-row-background-color);
+    padding: 0px;
+  }
+card:
+  type: weather-forecast
+  entity: weather.home
+  show_forecast: false
+  style: |
+    ha-card {
+      box-shadow: none;
+    }
+    ha-card .state {
+      font-size: 20px
+    }
+    ha-card .temp-attribute .temp {
+      font-size: 20px
+    }
+    ha-card .temp-attribute .temp span {
+      font-size: 18px
+    }

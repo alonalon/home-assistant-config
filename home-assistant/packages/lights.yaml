@@ -35,20 +35,20 @@ light:
     retain: true
 
   - platform: group
-    name: Kitchen Lights
+    name: Kitchen Lights Group
     entities:
       - light.kitchen_lights_zha
       - light.kitchen_table
 
   - platform: group
-    name: Living Room Lights
+    name: Living Room Lights Group
     entities:
       - light.livingroom_floor
       - light.tv_lightstrip
       - light.livingroom_ceiling
 
   - platform: group
-    name: Bedroom Lights
+    name: Bedroom Lights Group
     entities:
       - light.bedroom_drawer
       - light.bedroom_ceiling

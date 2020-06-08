@@ -7,11 +7,10 @@ alias: Just arrived
 trigger:
   - platform: state
     entity_id: person.aron
-    to: 'just_arrived'
-    from: 'away'
+    to: 'home'
 condition:
   - condition: numeric_state
-    entity_id: sensor.fibaro_system_motion_sensor_luminance
+    entity_id: sensor.fibaro_sensor_luminance
     below: 50
 action:
   - service: light.turn_on

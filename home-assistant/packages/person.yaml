@@ -11,4 +11,4 @@ person:
   - name: Aron
     id: arontracker
     device_trackers:
-      - device_tracker.aron_presence
+      - device_tracker.arons_iphone

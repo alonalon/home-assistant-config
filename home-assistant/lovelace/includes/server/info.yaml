@@ -7,7 +7,7 @@ style: |
   }
 card:
   type: horizontal-stack
-  title: Metrics
+  title: General Info
   cards:
     - type: glance
       entities:

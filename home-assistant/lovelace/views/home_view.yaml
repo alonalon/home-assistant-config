@@ -40,7 +40,6 @@ cards:
                 - !include ../includes/devices/google_home.yaml
                 - break
                 - !include ../includes/devices/vacuum.yaml
-                - type: 'custom:cap-card'
             Server:
               type: custom:layout-card
               layout: vertical

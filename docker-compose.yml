@@ -30,7 +30,6 @@ services:
     labels:
       traefik.enable: false
       traefik.http.services.traefik.loadbalancer.server.port: 8080
-      traefik.http.routers.traefik.rule: Host(`traefik.${DOMAIN}`)
       traefik.http.routers.traefik.middlewares: auth@file
       traefik.http.routers.traefik.tls.certResolver: le
 

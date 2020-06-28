@@ -46,6 +46,7 @@ light:
       - light.livingroom_floor
       - light.tv_lightstrip
       - light.livingroom_ceiling
+      - light.office
 
   - platform: group
     name: Bedroom Lights Group

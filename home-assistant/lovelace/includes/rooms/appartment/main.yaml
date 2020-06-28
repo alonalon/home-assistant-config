@@ -39,9 +39,17 @@ card:
             - type: custom:decluttering-card
               template: lights
               variables:
-                - entity: light.bedroom_drawer
-                - toggle: true
+                - entity: light.entrance
             - type: custom:decluttering-card
               template: lights
               variables:
-                - entity: light.bedroom_ceiling
+                - entity: light.closet
+    - type: vertical-stack
+      cards:
+        - type: custom:fold-entity-row
+          head:
+            type: section
+            label: Switch
+          entities:
+              - switch.switch_1
+              - switch.switch_2

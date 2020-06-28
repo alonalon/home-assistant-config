@@ -74,7 +74,7 @@
     tap_action:
       action: none
 
-  switch:
+  switch_view:
     show_state: false
     show_icon: false
     show_name: true

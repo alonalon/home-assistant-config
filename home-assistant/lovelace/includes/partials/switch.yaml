@@ -2,7 +2,7 @@ type: horizontal-stack
 cards:
   - type: "custom:button-card"
     entity: input_select.active_view
-    template: switch
+    template: switch_view
     name: "Rooms"
     tap_action:
       action: call-service
@@ -12,7 +12,7 @@ cards:
         options: 'Rooms'
   - type: "custom:button-card"
     entity: input_select.active_view
-    template: switch
+    template: switch_view
     name: "Devices"
     tap_action:
       action: call-service
@@ -22,7 +22,7 @@ cards:
         options: 'Devices'
   - type: "custom:button-card"
     entity: input_select.active_view
-    template: switch
+    template: switch_view
     name: "Server"
     tap_action:
       action: call-service

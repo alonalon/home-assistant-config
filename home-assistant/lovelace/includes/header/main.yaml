@@ -14,7 +14,6 @@ card:
   cards:
     - !include ./info.yaml
     - !include ./person.yaml
-    # - !include ./weather.yaml
     - !include ./devices.yaml
 
 

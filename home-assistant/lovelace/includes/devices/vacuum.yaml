@@ -29,3 +29,13 @@ stats:
     - attribute: cleaning_time
       unit: minutes
       subtitle: Cleaning time
+actions:
+  - name: Clean living room
+    service: script.vacuum_clean_living_room
+    icon: 'mdi:sofa'
+  - name: Clean bedroom
+    service: script.vacuum_clean_bedroom
+    icon: 'mdi:bed-empty'
+  - name: Clean kitchen
+    service: script.vacuum_clean_kitchen
+    icon: 'mdi:silverware-fork-knife'

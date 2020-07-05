@@ -22,18 +22,6 @@ homeassistant:
     binary_sensor.water:
       friendly_name: Water Leak
       icon: mdi:water
-    sensor.bedroom_temperature:
-      friendly_name: Bedroom Pressure
-    sensor.bedroom_temperature_2:
-      friendly_name: Bedroom Humidity
-    sensor.bedroom_temperature_3:
-      friendly_name: Bedroom Temperature
-    sensor.kitchen_temperature:
-      friendly_name: Kitchen Temperature
-    sensor.kitchen_temperature_2:
-      friendly_name: Kitchen Humidity
-    sensor.kitchen_temperature_3:
-      friendly_name: Kitchen Pressure
     sensor.fibaro_system_motion_sensor_luminance:
       friendly_name: Living Room luminance
       icon: mdi:lightbulb-outline

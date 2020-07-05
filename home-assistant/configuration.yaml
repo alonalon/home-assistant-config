@@ -38,8 +38,8 @@ tts:
   - platform: google_translate
 
 zha:
-  usb_path: /dev/zigbee
-  radio_type: deconz
+#  usb_path: /dev/zigbee
+#  radio_type: deconz
 
 hacs:
   token: !secret github_token

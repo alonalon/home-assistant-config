@@ -15,7 +15,7 @@ card:
     - type: horizontal-stack
       cards:
         - type: custom:button-card
-          entity: light.entrance
+          entity: light.all_lights_group
           name: 'Lights'
           template: light
         - type: custom:button-card

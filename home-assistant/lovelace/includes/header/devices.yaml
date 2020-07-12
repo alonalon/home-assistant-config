@@ -46,3 +46,19 @@ cards:
         ]]]
       template: header
       tap_action: !include ../popups/alarm_clock.yaml
+
+  - type: conditional
+    conditions:
+      - entity: input_boolean.alarm_enable
+        state: "off"
+    card:
+      type: custom:button-card
+      entity: sensor.alarm_time
+      gridcol: 1/6
+      gridrow: 2/6
+      name: >
+        [[[
+          return `Alarm is off`;
+        ]]]
+      template: header
+      tap_action: !include ../popups/alarm_clock.yaml

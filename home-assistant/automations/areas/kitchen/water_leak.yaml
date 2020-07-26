@@ -3,7 +3,7 @@
 ### Notify if detect water in kitchen
 ###
 
-alias: water_leak
+alias: Water Leak
 trigger:
   - platform: state
     entity_id: binary_sensor.water_leak

@@ -3,7 +3,7 @@
 ## Updates active_lights sensor
 ##
 
-alias: Update Active Lights Sensor
+alias: Update active lights sensor
 initial_state: True
 trigger:
   platform: event

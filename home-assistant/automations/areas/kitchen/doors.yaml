@@ -3,7 +3,7 @@
 ## Notify if fridge or freezer door is open for mor then 2 minutes
 ##
 
-alias: doors_open
+alias: Fridge & Freezer doors open
 trigger:
   - platform: state
     entity_id: binary_sensor.refrigerator_sensor

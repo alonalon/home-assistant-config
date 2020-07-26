@@ -3,7 +3,7 @@
 ## Automation to turn on scene when turn on tv
 ##
 
-alias: "Tv playing"
+alias: Tv playing
 initial_state: on
 trigger:
   - platform: state

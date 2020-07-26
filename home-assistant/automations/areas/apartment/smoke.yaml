@@ -3,7 +3,7 @@
 ## Notify when smoke is detected
 ##
 
-alias: smoke
+alias: Smoke
 trigger:
   - platform: state
     entity_id: binary_sensor.smoke

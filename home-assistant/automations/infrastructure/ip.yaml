@@ -3,7 +3,7 @@
 ## Notify when external IP is changing
 ##
 
-alias: notify_when_external_address_changes
+alias: Notify when external address changes
 trigger:
   platform: state
   entity_id: sensor.myipopendnscom

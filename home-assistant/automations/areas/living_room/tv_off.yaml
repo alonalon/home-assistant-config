@@ -3,7 +3,7 @@
 ## Automation to turn off scene when turning off tv
 ##
 
-alias: "Tv idle"
+alias: Tv idle
 initial_state: on
 trigger:
   - platform: state

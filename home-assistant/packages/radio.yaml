@@ -53,7 +53,7 @@ automation:
         entity_id: input_select.radio_station
     action:
       - service: script.radio
-  - alias: Set Chromecast Radio Volume
+  - alias: Set Chromecast radio volume
     trigger:
       platform: state
       entity_id: input_number.volume_radio

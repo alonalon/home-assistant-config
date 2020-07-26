@@ -60,7 +60,7 @@ group:
 
 automation:
   - id: alarm_clock
-    alias: 'Alarm Clock'
+    alias: Alarm Clock
     trigger:
       - platform: time_pattern
         minutes: '/1'

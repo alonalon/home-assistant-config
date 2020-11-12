@@ -38,7 +38,6 @@ card:
               template: lights
               variables:
                 - entity: light.bedroom_drawer
-                - toggle: true
             - type: custom:decluttering-card
               template: lights
               variables:

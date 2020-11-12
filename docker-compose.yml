@@ -34,7 +34,7 @@ services:
       traefik.http.routers.traefik.tls.certResolver: le
 
   home-assistant:
-    image: homeassistant/home-assistant:0.114.3
+    image: homeassistant/home-assistant:0.117.6
     container_name: home-assistant
     restart: always
     networks:
@@ -68,20 +68,6 @@ services:
       traefik.http.routers.portainer.rule: Host(`portainer.${DOMAIN}`)
       traefik.http.routers.portainer.tls.certResolver: le
       traefik.http.routers.portainer.entrypoints: web-secured
-
-  mqtt:
-    image: eclipse-mosquitto
-    container_name: mqtt
-    restart: unless-stopped
-    networks:
-      - web
-    ports:
-      - 1883:1883
-      - 9001:9001
-    volumes:
-      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
-    labels:
-      traefik.enable: false
 
   appdaemon:
     image: acockburn/appdaemon:latest

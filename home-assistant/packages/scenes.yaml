@@ -1,23 +1,7 @@
-##
-## Scenes
-##
+---
+# This handles the loading of my scenes
+#
+# https://www.home-assistant.io/docs/scene/
+#
 
-scene:
-  - name: tv_on
-    entities:
-      light.tv_lamp:
-        state: on
-      light.osramstrip:
-        state: on
-        transition: 20
-        color_temp: 367
-        brightness: 160
-      media_player.sony_bravia_tv: on
-  - name: tv_idle
-    entities:
-      light.osramstrip:
-        state: on
-        transition: 20
-        color_temp: 367
-        brightness: 100
-
+scene: !include_dir_list ../scenes

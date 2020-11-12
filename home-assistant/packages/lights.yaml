@@ -17,23 +17,6 @@ homeassistant:
       friendly_name: Living room ceiling light
 
 light:
-  - platform: mqtt
-    name: "livingroom_floor"
-    command_topic: "cmnd/sonoff/power"
-    state_topic: "stat/sonoff/POWER"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-  - platform: mqtt
-    name: "bedroom_drawer"
-    command_topic: "cmnd/sonoff4/power"
-    state_topic: "stat/sonoff4/POWER"
-    qos: 1
-    payload_on: "ON"
-    payload_off: "OFF"
-    retain: true
-
   - platform: group
     name: Kitchen Lights Group
     entities:

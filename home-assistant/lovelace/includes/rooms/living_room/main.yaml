@@ -41,7 +41,6 @@ card:
               template: lights
               variables:
                 - entity: light.livingroom_floor
-                - toggle: true
             - type: custom:decluttering-card
               template: lights
               variables:

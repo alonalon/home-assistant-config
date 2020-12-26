@@ -36,7 +36,7 @@ cards:
               cards:
                 - !include ../includes/devices/sonos.yaml
                 - !include ../includes/devices/tv.yaml
-                - !include ../includes/devices/chromecast.yaml
+                - !include ../includes/devices/apple_tv.yaml
                 - !include ../includes/devices/google_home.yaml
                 - break
                 - !include ../includes/devices/vacuum.yaml

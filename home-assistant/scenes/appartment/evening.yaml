@@ -1,0 +1,27 @@
+---
+##
+## Standard scene for evenings
+##
+
+name: Evening
+entities:
+  light.office:
+    brightness: 102
+    color_temp: 276
+    state: 'on'
+  light.livingroom_floor:
+    state: 'on'
+  light.tv_lightstrip:
+    brightness: 102
+    color_temp: 276
+    rgb_color: [255, 209, 72]
+    state: 'on'
+  light.entrance:
+    brightness: 100
+    state: 'on'
+  light.kitchen_lights_zha:
+    brightness: 125
+    color_temp: 366
+    state: 'on'
+  light.bedroom_drawer:
+    state: 'on'

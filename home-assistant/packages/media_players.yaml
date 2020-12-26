@@ -1,8 +1,0 @@
-##
-## Media players
-##
-
-cast:
-  media_player:
-  - host: !secret chromecast_ip
-  - host: !secret homemini_ip

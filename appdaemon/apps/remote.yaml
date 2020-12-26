@@ -1,10 +1,5 @@
 remote:
   module: remote
   class: Remote
-  global_dependencies:
-    - entities
-  dependencies:
-    - entity_manager
-  lights:
-    - light.office
-    - light.tv
+  light: light.kitchen_lights_zha
+  switch: '00:17:88:01:06:71:46:42'

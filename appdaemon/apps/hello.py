@@ -1,6 +1,4 @@
-from entities import Entities
-
-class HelloWorld(Entities):
+class HelloWorld:
 
   def initialize(self):
      self.log("Hello from AppDaemon")

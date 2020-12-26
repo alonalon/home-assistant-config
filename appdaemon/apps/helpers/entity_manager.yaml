@@ -1,5 +1,0 @@
-entity_manager:
-  module: entities
-  class: EntityManager
-  global_dependencies:
-    - base

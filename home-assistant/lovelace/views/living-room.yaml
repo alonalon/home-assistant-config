@@ -1,0 +1,67 @@
+title: Living Room
+path: living-room
+icon: 'mdi:sofa-outline'
+badges: []
+cards:
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: '## Lights'
+      - type: grid
+        columns: 4
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.livingroom_floor
+            name: Floor Lamp
+            icon: 'mdi:floor-lamp'
+            show_state: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.livingroom_ceiling
+            name: Ceiling Light
+            icon: 'mdi:ceiling-light'
+            show_state: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.tv_lightstrip
+            name: TV Lights
+            icon: 'mdi:lightbulb'
+            show_state: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.office
+            name: Office
+            icon: 'mdi:desk-lamp'
+            show_state: true
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: '## Sensors'
+      - type: grid
+        columns: 1
+        square: false
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.fibaro_sensor_temperature
+            show:
+              name: true
+              icon: false
+          - type: markdown
+            content: '## Devices'
+          - type: custom:mini-media-player
+            entity: media_player.living_room_sonos
+          - type: custom:mini-media-player
+            entity: media_player.sony_bravia_tv
+          - type: custom:mini-media-player
+            entity: media_player.apple_tv
+

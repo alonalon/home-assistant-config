@@ -1,0 +1,119 @@
+title: Dashboard
+path: dashboard
+icon: 'mdi:home-outline'
+badges: []
+cards:
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: |
+          ## Indoor temperature {{ states.sensor.average_indoor_temperature.state }}°C
+
+      - type: grid
+        columns: 3
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/alarm-clock
+            entity: group.alarm_clock
+            show_state: true
+            show_name: false
+            icon: mdi:alarm
+
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/vacuum
+            entity: vacuum.xiaomi_vacuum_cleaner
+            show_name: false
+            show_state: true
+
+          - type: button
+            tap_action:
+              action: more-info
+            entity: group.sonos
+            show_state: true
+            show_name: false
+            icon: mdi:speaker
+
+      - type: grid
+        columns: 3
+        cards:
+          - type: button
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.evening
+            entity: scene.evening
+            show_name: false
+            icon: mdi:weather-night
+
+          - type: button
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.night
+            entity: scene.night
+            show_name: false
+            icon: mdi:weather-sunset-down
+
+          - type: button
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              service_data:
+                entity_id: scene.day
+            entity: scene.day
+            show_name: false
+            icon: mdi:weather-sunny
+
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/living-room
+            entity: light.living_room_lights_group
+            show_state: true
+            show_name: false
+            icon: 'mdi:sofa-outline'
+            hold_action:
+              action: toggle
+
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/bedroom
+            entity: light.bedroom_lights_group
+            show_state: true
+            show_name: false
+            icon: 'mdi:bed-outline'
+            hold_action:
+              action: toggle
+
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+            entity: light.kitchen_lights_group
+            show_state: true
+            show_name: false
+            icon: 'mdi:stove'
+            hold_action:
+              action: toggle
+
+          - type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/kitchen
+            entity: light.kitchen_lights_group
+            show_state: true
+            show_name: false
+            icon: 'mdi:stove'
+            hold_action:
+              action: toggle

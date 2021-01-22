@@ -43,8 +43,3 @@ zha:
 hacs:
   token: !secret github_token
   appdaemon: true
-
-browser_mod:
-  devices:
-    c0f2b05e-70f3a1c0:
-      name: macbook

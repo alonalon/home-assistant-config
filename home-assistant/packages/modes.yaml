@@ -11,12 +11,3 @@ input_boolean:
     name: Vacation Mode
     icon: mdi:beach
     initial: false
-
-input_select:
-  active_view:
-    name: View
-    options:
-      - Rooms
-      - Devices
-      - Server
-    initial: Rooms

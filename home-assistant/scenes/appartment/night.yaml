@@ -1,0 +1,9 @@
+---
+##
+## Standard scene for evenings
+##
+
+name: Night
+entities:
+  light.all_lights_group:
+    state: 'off'

@@ -28,3 +28,5 @@ traefik/certs/
 traefik/traefik.log
 traefik/config/usersFile
 automations.yaml
+blueprints
+network.md

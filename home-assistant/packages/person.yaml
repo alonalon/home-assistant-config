@@ -9,6 +9,6 @@ homeassistant:
 
 person:
   - name: Aron
-    id: arontracker
+    id: aron
     device_trackers:
       - device_tracker.arons_iphone

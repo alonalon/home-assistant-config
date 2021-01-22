@@ -1,0 +1,51 @@
+title: Bedroom
+path: bedroom
+icon: 'mdi:bed-outline'
+badges: []
+cards:
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: '## Lights'
+      - type: grid
+        columns: 2
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.bedroom_ceiling
+            name: Ceiling Light
+            icon: 'mdi:ceiling-light'
+            show_state: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.bedroom_drawer
+            name: Drawer Lamp
+            icon: 'mdi:desk-lamp'
+            show_state: true
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: '## Sensors'
+      - type: grid
+        columns: 1
+        square: false
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.bedroom_temperature
+              - sensor.bedroom_pressure
+              - sensor.bedroom_humidity
+            show:
+              name: true
+              icon: false
+          - type: markdown
+            content: '## Devices'
+          - type: custom:mini-media-player
+            entity: media_player.bedroom_google_home
+

@@ -1,5 +1,0 @@
-type: custom:decluttering-card
-template: media_player
-variables:
-  - entity: media_player.bedroom_google_home
-  - icon: mdi:speaker

@@ -34,7 +34,7 @@ services:
       traefik.http.routers.traefik.tls.certResolver: le
 
   home-assistant:
-    image: homeassistant/home-assistant:2020.12.1
+    image: homeassistant/home-assistant:2021.1.3
     container_name: home-assistant
     restart: always
     networks:

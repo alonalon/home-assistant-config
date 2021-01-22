@@ -12,10 +12,10 @@ homeassistant:
     automation.doors_open:
       hidden: true
     binary_sensor.refrigerator_sensor:
-      friendly_name: Fridge door
+      friendly_name: Fridge Door
       icon: mdi:fridge
     binary_sensor.freezer_sensor:
-      friendly_name: Freezer door
+      friendly_name: Freezer Door
       icon: mdi:fridge
     automation.water_leak:
       hidden: true
@@ -31,17 +31,6 @@ homeassistant:
       icon: mdi:run
 
 sensor:
-  - platform: template
-    sensors:
-      active_lights:
-        value_template: >-
-          {{ states.light
-            | selectattr('state', 'eq', 'on')
-            | rejectattr('attributes.type', 'eq', 'browser_mod')
-            | list
-            | count
-          }}
-
   - platform: min_max
     name: "Average Indoor Temperature"
     type: "mean"

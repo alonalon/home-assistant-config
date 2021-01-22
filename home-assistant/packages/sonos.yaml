@@ -31,3 +31,11 @@ script:
      - service: media_player.sonos_restore
        data_template:
          entity_id: "{{ sonos_entity }}"
+
+
+group:
+  sonos:
+    name: Sonos
+    entities:
+      - media_player.living_room_sonos
+      - media_player.kitchen_sonos

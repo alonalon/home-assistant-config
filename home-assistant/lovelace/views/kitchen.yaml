@@ -1,0 +1,53 @@
+title: Kitchen
+path: kitchen
+icon: 'mdi:stove'
+badges: []
+cards:
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: '## Lights'
+
+      - type: grid
+        columns: 2
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.kitchen_lights_zha
+            name: Kitchen Lights
+            icon: 'mdi:lightbulb-group'
+            show_state: true
+
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.kitchen_table
+            name: Dinner Table
+            icon: 'mdi:ceiling-light'
+            show_state: true
+  - type: grid
+    columns: 1
+    square: false
+    cards:
+      - type: markdown
+        content: '## Sensors'
+      - type: grid
+        columns: 1
+        square: false
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.kitchen_temperature
+              - sensor.kitchen_pressure
+              - sensor.kitchen_humidity
+            show:
+              name: true
+              icon: false
+          - type: markdown
+            content: '## Devices'
+          - type: custom:mini-media-player
+            entity: media_player.kitchen_sonos
+

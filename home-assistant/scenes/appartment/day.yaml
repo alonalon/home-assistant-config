@@ -1,0 +1,18 @@
+---
+##
+## Standard scene for day time
+##
+
+name: Day
+entities:
+  light.office:
+    brightness: 102
+    color_temp: 276
+    state: 'on'
+  light.entrance:
+    brightness: 60
+    state: 'on'
+  light.kitchen_lights_zha:
+    brightness: 125
+    color_temp: 366
+    state: 'on'

@@ -43,3 +43,5 @@ light:
       - light.bedroom_lights_group
       - light.kitchen_lights_group
       - light.living_room_lights_group
+      - light.entrance
+      - light.closet
